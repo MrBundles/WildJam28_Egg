@@ -19,8 +19,6 @@ alpha_threshhold = 0.999
 polygon = PoolVector2Array( -0.326935, -49.1021, 21.5001, -29.0568, 29.5182, -1.43898, 24.6182, 30.6334, -2.10873, 44.4423, -25.7176, 33.7515, -30.172, -4.11166, -21.7085, -26.8296 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 10, 10 )
 
 [node name="VelocityLabel" type="Label" parent="."]
 margin_left = 30.0
@@ -55,3 +53,4 @@ texture = ExtResource( 3 )
 [node name="ShellPolygons" type="Node2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 27.7367, -97.2107, 63.8181, -101.665, 79.8543, -74.0473, 58.4727, -59.7929, 33.5275, -73.1564 )

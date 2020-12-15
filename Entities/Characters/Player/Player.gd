@@ -142,8 +142,10 @@ func _break_shell(collider_position : Vector2, damage : float):
 		var shard_collision_polygon = CollisionPolygon2D.new()
 		var shard_polygon = Polygon2D.new()
 		shard_collision_polygon.polygon = _get_combined_polygon_outline(polygons_to_remove.duplicate())
+		$Polygon2D.polygon = shard_collision_polygon.polygon
 		
-		shard_polygon.set_polygon(shard_collision_polygon.polygon)
+		shard_polygon.polygon = shard_collision_polygon.polygon
+		print("returned polygon: " + str(shard_collision_polygon.polygon))
 		var shard_polygon_texture = $Sprite.texture
 		var shard_polygon_image = shard_polygon_texture.get_data()
 		var shard_polygon_texture_offset = Vector2(shard_polygon_image.get_width() / 2, shard_polygon_image.get_height() / 2)
@@ -152,9 +154,8 @@ func _break_shell(collider_position : Vector2, damage : float):
 		
 		shard_body.add_child(shard_collision_polygon)
 		shard_body.add_child(shard_polygon)
-		get_tree().root.get_node("/root/GameScene").add_child(shard_body)
+		add_child(shard_body)
 		
-		print(polygons_to_remove)
 		for polygon in polygons_to_remove:
 			polygon.queue_free()
 
