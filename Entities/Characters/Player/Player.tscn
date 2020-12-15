@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Egg.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Characters/Player/Contact.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Characters/Player/Chick.png" type="Texture" id=4]
 
 [node name="Player" type="RigidBody2D"]
+collision_layer = 2
 gravity_scale = 10.0
-contacts_reported = 5
+contacts_reported = 1
 contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
@@ -15,7 +17,13 @@ shard_randomize_factor = 0.0
 shard_length = 8
 alpha_threshhold = 0.999
 
+[node name="ChickPolygon2D" type="Polygon2D" parent="."]
+texture = ExtResource( 4 )
+texture_offset = Vector2( 32, 48 )
+polygon = PoolVector2Array( -11.0175, -30.8387, 9.02774, -43.3113, 24.173, -15.2479, 25.0639, 13.7064, -10.5721, 25.7335, -38.6354, 18.1609, -27.9446, -10.3479 )
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( -0.326935, -49.1021, 21.5001, -29.0568, 29.5182, -1.43898, 24.6182, 30.6334, -2.10873, 44.4423, -25.7176, 33.7515, -30.172, -4.11166, -21.7085, -26.8296 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -51,6 +59,3 @@ visible = false
 texture = ExtResource( 3 )
 
 [node name="ShellPolygons" type="Node2D" parent="."]
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( 27.7367, -97.2107, 63.8181, -101.665, 79.8543, -74.0473, 58.4727, -59.7929, 33.5275, -73.1564 )
