@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Characters/Player/Egg.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Characters/Player/Contact.png" type="Texture" id=3]
+
+[node name="Player" type="RigidBody2D"]
+gravity_scale = 10.0
+contacts_reported = 5
+contact_monitor = true
+can_sleep = false
+script = ExtResource( 1 )
+torque_force = 300
+shard_randomize_factor = 0.0
+shard_length = 8
+alpha_threshhold = 0.999
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -0.326935, -49.1021, 21.5001, -29.0568, 29.5182, -1.43898, 24.6182, 30.6334, -2.10873, 44.4423, -25.7176, 33.7515, -30.172, -4.11166, -21.7085, -26.8296 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 10, 10 )
+
+[node name="VelocityLabel" type="Label" parent="."]
+margin_left = 30.0
+margin_top = -41.0
+margin_right = 100.0
+margin_bottom = -27.0
+text = "Velocity: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContactLabel" type="Label" parent="."]
+margin_left = 32.2272
+margin_top = -23.6275
+margin_right = 102.227
+margin_bottom = -9.62748
+text = "Contact:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="OutlineSprite" type="Sprite" parent="."]
+visible = false
+
+[node name="ContactSprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="ShellPolygons" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
