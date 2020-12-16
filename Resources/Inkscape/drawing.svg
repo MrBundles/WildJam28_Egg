@@ -50,7 +50,7 @@
      inkscape:window-x="-9"
      inkscape:window-height="1001"
      inkscape:window-width="1920"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox="true"
      inkscape:snap-grids="true"
@@ -58,9 +58,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="217.92852"
-     inkscape:cx="296.55329"
-     inkscape:zoom="1.4"
+     inkscape:cy="346.5064"
+     inkscape:cx="329.734"
+     inkscape:zoom="5.6"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -81,7 +81,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -142,5 +142,103 @@
        cx="105.83334"
        id="path854"
        style="fill:#00ff00;fill-opacity:1;stroke-width:2.60528;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.60528, 10.42109999999999914" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       sodipodi:nodetypes="ssszs"
+       d="m 84.666667,98.211455 c 0,14.028035 -7.581312,20.321875 -16.933333,20.321875 -9.352022,0 -16.933334,-6.29384 -16.933334,-20.321875 0,-14.028033 9.354438,-30.478121 16.933334,-30.478121 7.578895,0 16.933333,16.450088 16.933333,30.478121 z"
+       style="fill:#ffe800;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
+       id="path849"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png" />
+    <g
+       id="g874"
+       transform="translate(-22.784727,-9.9557903)"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48">
+      <ellipse
+         inkscape:export-ydpi="48"
+         inkscape:export-xdpi="48"
+         ry="1.8709809"
+         rx="1.8709805"
+         cy="86.537651"
+         cx="95.004318"
+         id="ellipse856"
+         style="fill:#1a1a1a;fill-opacity:1;stroke-width:1.15144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.15144, 4.60575" />
+      <ellipse
+         style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.400986;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.400986, 1.60394"
+         id="ellipse858"
+         cx="95.622375"
+         cy="85.451866"
+         rx="0.65156323"
+         ry="0.65156341"
+         inkscape:export-xdpi="48"
+         inkscape:export-ydpi="48" />
+    </g>
+    <g
+       id="g870"
+       transform="translate(-0.9354433,2.0045214)"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48">
+      <ellipse
+         style="fill:#1a1a1a;fill-opacity:1;stroke-width:1.15144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.15144, 4.60575"
+         id="ellipse864"
+         cx="64.067871"
+         cy="74.91143"
+         rx="1.8709805"
+         ry="1.8709809"
+         inkscape:export-xdpi="48"
+         inkscape:export-ydpi="48" />
+      <ellipse
+         inkscape:export-ydpi="48"
+         inkscape:export-xdpi="48"
+         ry="0.65156341"
+         rx="0.65156323"
+         cy="73.825645"
+         cx="64.685928"
+         id="ellipse866"
+         style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.400986;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.400986, 1.60394" />
+    </g>
+    <path
+       sodipodi:type="star"
+       style="fill:#ff7f2a;fill-opacity:1;stroke-width:1.41119;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.41119, 5.64476"
+       id="path878"
+       sodipodi:sides="3"
+       sodipodi:cx="67.808085"
+       sodipodi:cy="82.437597"
+       sodipodi:r1="4.5158238"
+       sodipodi:r2="2.438545"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.6179939"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 67.808083,86.953423 -2.111842,-3.296551 -1.798977,-3.477185 3.910819,-0.180633 3.910818,0.180633 -1.798977,3.477185 z"
+       inkscape:transform-center-y="1.0386368"
+       inkscape:transform-center-x="2.1666706e-06"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Fuzz.png"
+       transform="matrix(0.05278467,0,0,0.40210457,82.582687,44.007229)"
+       inkscape:transform-center-y="-0.7830321"
+       d="m 101.6,84.666665 3.95947,6.180666 3.37288,6.519334 -7.33235,0.338666 -7.33235,-0.338667 3.37288,-6.519333 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="false"
+       sodipodi:arg2="-0.52359878"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:r2="4.572"
+       sodipodi:r1="8.4666662"
+       sodipodi:cy="93.133331"
+       sodipodi:cx="101.6"
+       sodipodi:sides="3"
+       id="path859"
+       style="fill:#ffe800;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.5833"
+       sodipodi:type="star" />
   </g>
 </svg>
