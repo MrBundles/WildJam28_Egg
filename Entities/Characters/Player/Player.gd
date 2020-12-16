@@ -4,10 +4,14 @@ extends RigidBody2D
 var rng = RandomNumberGenerator.new()
 
 #variables
-var leg_max_y = 65
-var leg_accel = 7.5
-var wing_max_rotation = 95
-var wing_accel = 7.5
+var leg_max_y : float = 65
+var leg_accel : float = 7.5
+var wing_max_rotation : float = 95
+var jump_force : float = 0
+var jump_force_decreasing : bool = false
+var max_jump_force : float = 1000
+var jump_force_accel : float = 7
+var jump_force_decel : float = 50
 
 #exports
 export var egg_texture : Texture = Texture.new()
@@ -16,7 +20,6 @@ export var torque_force = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
 export var alpha_threshhold = .5
-export var jump_force = 750
 
 func _ready():	
 	rng.randomize()
@@ -24,33 +27,45 @@ func _ready():
 	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 10)
 	$ChickPolygon2D.polygon = $CollisionPolygon2D.polygon
 	generate_shell($CollisionPolygon2D.polygon)
-	
+
+
+func _process(delta):
+	pass
+
 
 func _integrate_forces(state):
 	if Input.is_action_pressed("ui_left"):
 		apply_torque_impulse(-torque_force)
 	if Input.is_action_pressed("ui_right"):
 		apply_torque_impulse(torque_force)
-	if Input.is_action_just_pressed("ui_up") and state.get_contact_count() > 0 and $ShellPolygons.get_child_count() < 1:
-		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
+	if Input.is_action_pressed("ui_up"):
+		if jump_force_decreasing:
+			jump_force = clamp(jump_force - jump_force_accel, 0, max_jump_force)
+			if jump_force == 0:
+				jump_force_decreasing = false
+		else:
+			jump_force = clamp(jump_force + jump_force_accel, 0, max_jump_force)
+			if jump_force == max_jump_force:
+				jump_force_decreasing = true
+			
+	else:
+		jump_force_decreasing = false
+		jump_force = clamp(jump_force - jump_force_decel, 0, max_jump_force)
 	
-	if Input.is_action_pressed("ui_up") and $ShellPolygons.get_child_count() < 1 and linear_velocity.y < 0:
-		if $LegSprite.position.y < leg_max_y - leg_accel:
-			$LegSprite.position.y += leg_accel
+	if Input.is_action_just_released("ui_up") and state.get_contact_count() > 0 and $ShellPolygons.get_child_count() < 1:
+		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
+		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, jump_force / max_jump_force * leg_max_y, .2, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Legs/LegTween.start()
+		yield($Legs/LegTween, "tween_all_completed")
+		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, 0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Legs/LegTween.start()
+	
+	if $ShellPolygons.get_child_count() < 1:
+		$Wings/RightWing.rotation_degrees = (1 - (jump_force / max_jump_force)) * wing_max_rotation
+		$Wings/LeftWing.rotation_degrees = (1 - (jump_force / max_jump_force)) * -wing_max_rotation
 	else:
-		if $LegSprite.position.y > leg_accel:
-			$LegSprite.position.y -= leg_accel
-		
-	if Input.is_action_pressed("ui_up") and $ShellPolygons.get_child_count() < 1 and linear_velocity.y > 0:
-		if $RightWing.rotation_degrees > wing_accel:
-			$RightWing.rotation_degrees -= wing_accel
-		if $LeftWing.rotation_degrees < wing_accel:
-			$LeftWing.rotation_degrees += wing_accel
-	else:
-		if $RightWing.rotation_degrees < wing_max_rotation - wing_accel/2:
-			$RightWing.rotation_degrees += wing_accel/2
-		if $LeftWing.rotation_degrees > -wing_max_rotation + wing_accel/2:
-			$LeftWing.rotation_degrees -= wing_accel/2
+		$Wings/RightWing.rotation_degrees = wing_max_rotation
+		$Wings/LeftWing.rotation_degrees = -wing_max_rotation
 	
 	if Input.is_action_just_pressed("ui_select") and state.get_contact_count() > 0:
 		_break_shell(to_local(state.get_contact_collider_position(0)), 500)

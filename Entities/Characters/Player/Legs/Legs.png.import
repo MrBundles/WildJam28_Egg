@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wing.png-bad601bbea64faeb7815f9a5dd73b9ab.stex"
+path="res://.import/Legs.png-cf5ec59b4b14942759605a10312615f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Characters/Player/Wing.png"
-dest_files=[ "res://.import/Wing.png-bad601bbea64faeb7815f9a5dd73b9ab.stex" ]
+source_file="res://Entities/Characters/Player/Legs/Legs.png"
+dest_files=[ "res://.import/Legs.png-cf5ec59b4b14942759605a10312615f0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

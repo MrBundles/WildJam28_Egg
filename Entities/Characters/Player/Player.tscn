@@ -1,33 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Egg.png" type="Texture" id=2]
-[ext_resource path="res://Entities/Characters/Player/Fuzz.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Characters/Player/Legs/Legs.gd" type="Script" id=3]
 [ext_resource path="res://Entities/Characters/Player/Chick.png" type="Texture" id=4]
-[ext_resource path="res://Entities/Characters/Player/Legs.png" type="Texture" id=5]
-[ext_resource path="res://Entities/Characters/Player/Wing.png" type="Texture" id=6]
-
-[sub_resource type="Curve" id=1]
-min_value = -1.0
-_data = [ Vector2( 0, 0.0181818 ), 0.0, 1.0592, 0, 0, Vector2( 1, 0 ), -1.13864, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=2]
-curve = SubResource( 1 )
-
-[sub_resource type="ParticlesMaterial" id=3]
-emission_shape = 3
-emission_point_texture = ExtResource( 4 )
-emission_color_texture = ExtResource( 4 )
-emission_point_count = 30
-flag_align_y = true
-flag_disable_z = true
-direction = Vector3( 0, 0, 0 )
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 40.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-orbit_velocity_curve = SubResource( 2 )
+[ext_resource path="res://Entities/Characters/Player/Wings/Wings.gd" type="Script" id=5]
+[ext_resource path="res://Entities/Characters/Player/Wings/Wing.png" type="Texture" id=6]
+[ext_resource path="res://Entities/Characters/Player/Legs/Legs.png" type="Texture" id=7]
 
 [sub_resource type="Image" id=6]
 data = {
@@ -54,40 +33,45 @@ chick_texture = ExtResource( 4 )
 torque_force = 300
 shard_length = 8
 alpha_threshhold = 0.999
-jump_force = 500
 
-[node name="LegSprite" type="Sprite" parent="."]
-position = Vector2( -1.12245, 65.9446 )
-texture = ExtResource( 5 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
-[node name="RightWing" type="Node2D" parent="."]
+[node name="Legs" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="LegTween" type="Tween" parent="Legs"]
+
+[node name="LegSprite" type="Sprite" parent="Legs"]
+texture = ExtResource( 7 )
+
+[node name="Wings" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="WingTween" type="Tween" parent="Wings"]
+
+[node name="RightWing" type="Node2D" parent="Wings"]
 position = Vector2( 16, -24 )
-rotation = 0.0122173
+rotation = 1.65806
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RightWingSprite" type="Sprite" parent="RightWing"]
+[node name="RightWingSprite" type="Sprite" parent="Wings/RightWing"]
 position = Vector2( 32, 0 )
 texture = ExtResource( 6 )
 
-[node name="LeftWing" type="Node2D" parent="."]
+[node name="LeftWing" type="Node2D" parent="Wings"]
 position = Vector2( -16, -24 )
-rotation = -0.0453786
+rotation = -1.65806
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RightWingSprite" type="Sprite" parent="LeftWing"]
+[node name="RightWingSprite" type="Sprite" parent="Wings/LeftWing"]
 position = Vector2( -32, 0 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 6 )
-
-[node name="FuzzParticles2D" type="Particles2D" parent="."]
-visible = false
-amount = 10000
-process_material = SubResource( 3 )
-texture = ExtResource( 3 )
 
 [node name="ChickPolygon2D" type="Polygon2D" parent="."]
 texture = ExtResource( 4 )
@@ -98,11 +82,17 @@ polygon = PoolVector2Array( 4, -47, 6, -46, 15, -38, 22, -28, 26, -18, 29, -8, 3
 visible = false
 polygon = PoolVector2Array( 4, -47, 6, -46, 15, -38, 22, -28, 26, -18, 29, -8, 31, 2, 31, 12, 30, 22, 26, 32, 17, 42, 8, 46, -8, 46, -17, 42, -26, 32, -30, 22, -31, 12, -31, 2, -29, -8, -26, -18, -22, -28, -15, -38, -6, -46, -4, -47 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
 [node name="OutlineSprite" type="Sprite" parent="."]
 visible = false
 texture = SubResource( 5 )
 
 [node name="ShellPolygons" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 32.0
+margin_right = 115.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

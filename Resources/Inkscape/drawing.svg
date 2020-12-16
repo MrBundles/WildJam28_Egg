@@ -8,70 +8,427 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="drawing.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   inkscape:export-ydpi="48"
-   inkscape:export-xdpi="48"
-   inkscape:export-filename="C:\Users\Kevin Wagner\bitmap.png"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 210 297"
+   width="210mm"
    height="297mm"
-   width="210mm">
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="C:\Users\Kevin Wagner\bitmap.png"
+   inkscape:export-xdpi="48"
+   inkscape:export-ydpi="48"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="drawing.svg">
   <defs
      id="defs2">
     <linearGradient
-       id="linearGradient850"
+       id="linearGradient1183"
        inkscape:collect="always">
       <stop
-         id="stop846"
+         id="stop1179"
          offset="0"
-         style="stop-color:#f4e3d7;stop-opacity:1" />
+         style="stop-color:#ffffae;stop-opacity:1" />
       <stop
-         id="stop848"
+         style="stop-color:#fbfb69;stop-opacity:1"
+         offset="0.49070036"
+         id="stop1189" />
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1"
+         offset="0.92615801"
+         id="stop1187" />
+      <stop
+         id="stop1181"
          offset="1"
-         style="stop-color:#e9c6af;stop-opacity:1" />
+         style="stop-color:#dbdb00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1008">
+      <stop
+         style="stop-color:#d45500;stop-opacity:1"
+         offset="0"
+         id="stop1004" />
+      <stop
+         id="stop1010"
+         offset="0.5"
+         style="stop-color:#d45500;stop-opacity:0.49803922;" />
+      <stop
+         style="stop-color:#d45500;stop-opacity:1"
+         offset="1"
+         id="stop1006" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient984">
+      <stop
+         style="stop-color:#ff7f2a;stop-opacity:1"
+         offset="0"
+         id="stop980" />
+      <stop
+         id="stop986"
+         offset="0.5"
+         style="stop-color:#ff9955;stop-opacity:1" />
+      <stop
+         style="stop-color:#ff7f2a;stop-opacity:1"
+         offset="1"
+         id="stop982" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient918-3-1"
+       inkscape:collect="always">
+      <stop
+         id="stop914"
+         offset="0"
+         style="stop-color:#ff9955;stop-opacity:1" />
+      <stop
+         id="stop916"
+         offset="1"
+         style="stop-color:#ff7f2a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient850">
+      <stop
+         style="stop-color:#f4e3d7;stop-opacity:1"
+         offset="0"
+         id="stop846" />
+      <stop
+         style="stop-color:#e9c6af;stop-opacity:1"
+         offset="1"
+         id="stop848" />
     </linearGradient>
     <radialGradient
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1,0,0,1.4999999,0,-16.933331)"
-       r="16.933334"
-       fy="33.866666"
-       fx="67.733334"
-       cy="33.866666"
-       cx="67.733334"
-       id="radialGradient852"
+       inkscape:collect="always"
        xlink:href="#linearGradient850"
+       id="radialGradient852"
+       cx="67.733334"
+       cy="33.866666"
+       fx="67.733334"
+       fy="33.866666"
+       r="16.933334"
+       gradientTransform="matrix(1,0,0,1.4999999,0,-16.933331)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43139)"
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       id="radialGradient920"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-85.78492,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient924"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-81.557732,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient928"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       spreadMethod="pad"
+       y2="143.93333"
+       x2="-135.46667"
+       y1="143.93333"
+       x1="-160.86667"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient978"
+       xlink:href="#linearGradient984"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       gradientUnits="userSpaceOnUse"
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       id="linearGradient1002"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,151.90197)"
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1014"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.01211,159.37255)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1018"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012111,166.84314)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1022"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012113,174.31372)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1026"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       spreadMethod="pad"
+       y2="143.93333"
+       x2="-135.46667"
+       y1="143.93333"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1059"
+       xlink:href="#linearGradient984"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1061"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1063"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-81.557732,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1065"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-85.78492,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1067"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,151.90197)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1069"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.01211,159.37255)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1071"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012111,166.84314)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1073"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012113,174.31372)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1075"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       spreadMethod="pad"
+       y2="143.93333"
+       x2="-135.46667"
+       y1="143.93333"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1097"
+       xlink:href="#linearGradient984"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43138)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1099"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1101"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-81.557732,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1103"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <radialGradient
+       r="12.700002"
+       fy="215.90001"
+       fx="-165.10001"
+       cy="215.90001"
+       cx="-165.10001"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-85.78492,144.43139)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1105"
+       xlink:href="#linearGradient918-3-1"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012109,151.90197)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1107"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.01211,159.37255)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1109"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012111,166.84314)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1111"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <linearGradient
+       y2="88.899999"
+       x2="-135.46666"
+       y1="88.899999"
+       x1="-160.86667"
+       gradientTransform="matrix(0.2496371,0,0,0.29411763,-90.012113,174.31372)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient1113"
+       xlink:href="#linearGradient1008"
+       inkscape:collect="always" />
+    <radialGradient
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,1.4999999,0,-46.566654)"
+       r="16.933334"
+       fy="93.133331"
+       fx="67.733337"
+       cy="93.133331"
+       cx="67.733337"
+       id="radialGradient1185"
+       xlink:href="#linearGradient1183"
        inkscape:collect="always" />
   </defs>
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="-9"
-     inkscape:window-x="-9"
-     inkscape:window-height="1001"
-     inkscape:window-width="1920"
-     inkscape:snap-global="false"
-     inkscape:bbox-nodes="true"
-     inkscape:snap-bbox="true"
-     inkscape:snap-grids="true"
-     showgrid="true"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="mm"
-     inkscape:cy="346.5064"
-     inkscape:cx="329.734"
-     inkscape:zoom="5.6"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
+     id="base"
      pagecolor="#ffffff"
-     id="base">
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="357.40581"
+     inkscape:cy="316.64591"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1243"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-global="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
     <inkscape:grid
-       spacingy="8.4666667"
-       spacingx="8.4666667"
+       type="xygrid"
        id="grid833"
-       type="xygrid" />
+       spacingx="8.4666667"
+       spacingy="8.4666667" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -86,159 +443,444 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
+     inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
-    <path
+     id="layer1">
+    <g
+       inkscape:transform-center-y="18.89881"
+       inkscape:transform-center-x="-0.94494048"
+       transform="rotate(32.296565,84.160539,90.164902)"
+       id="g1233">
+      <g
+         inkscape:transform-center-y="-0.28691983"
+         inkscape:transform-center-x="-15.915322"
+         transform="matrix(-0.01217714,-0.79761578,0.84103963,-0.09577377,17.133937,167.44496)"
+         id="g1243">
+        <g
+           inkscape:export-ydpi="48"
+           inkscape:export-xdpi="48"
+           inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Wing.png"
+           id="g1259">
+          <path
+             id="path1226"
+             style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
+             d="m 90.731059,75.964167 c -0.91904,0.120531 -1.83226,0.49017 -2.72431,1.068658 7.11806,2.516929 16.494371,11.394771 22.362551,21.689082 -3.51455,-12.18511 -13.067061,-23.619409 -19.638241,-22.75774 z" />
+          <path
+             id="path1228"
+             style="fill:#eaea00;fill-opacity:1;stroke-width:3.11358;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3.11358, 12.45429999999999993"
+             d="m 93.419883,75.798155 c -0.298321,-0.04416 -0.598745,-0.0594 -0.899955,-0.05366 6.955909,6.244821 14.760542,18.15991 19.193542,30.261689 C 108.95598,91.690459 100.2796,76.813823 93.419889,75.798212 Z" />
+          <path
+             d="m 94.841928,78.288317 c -0.293246,-0.06114 -0.590414,-0.09336 -0.889691,-0.10456 6.506893,6.662046 13.496473,19.065313 17.128303,31.466153 -1.8287,-14.529472 -9.4956,-29.955474 -16.23861,-31.361535 z"
+             style="fill:#e7e700;fill-opacity:1;stroke-width:3.11358;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3.11358, 12.45429999999999993"
+             id="path1253" />
+          <path
+             d="m 92.527487,74.710348 c -1.088551,0 -2.213604,0.340976 -3.342433,0.963766 7.202172,3.962161 15.944166,16.75336 18.560626,29.080396 0.5911,2.78491 0.88079,5.34096 0.9126,7.6786 0.51978,-2.13645 0.80254,-4.54585 0.80254,-7.24452 0,-14.028031 -9.35444,-30.478242 -16.933333,-30.478242 z"
+             style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
+             id="path1224" />
+        </g>
+      </g>
+    </g>
+    <g
        inkscape:export-ydpi="48"
        inkscape:export-xdpi="48"
-       sodipodi:nodetypes="ssszs"
-       d="m 42.333336,49.105727 c 0,7.014015 -3.790656,10.160938 -8.466667,10.160938 -4.676011,0 -8.466667,-3.146923 -8.466667,-10.160938 0,-7.014016 4.677219,-15.23906 8.466667,-15.23906 3.789448,0 8.466667,8.225044 8.466667,15.23906 z"
-       style="fill:#ff0000;fill-opacity:1;stroke-width:1.41425;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.41425, 5.65701"
-       id="path835" />
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Legs.png"
+       transform="translate(43.34352,18.547695)"
+       id="g1177">
+      <g
+         id="g1057"
+         transform="matrix(0.70193324,0,0,0.70193324,-71.352022,-10.029779)">
+        <rect
+           y="169.33333"
+           x="-130.17039"
+           height="37.352932"
+           width="6.3407836"
+           id="rect1039"
+           style="fill:url(#linearGradient1059);fill-opacity:1;stroke-width:5.52638;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5.52638, 22.1054"
+           transform="scale(-1,1)" />
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1061);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           id="rect1041"
+           width="6.3407836"
+           height="2.4901967"
+           x="-130.17039"
+           y="169.33333" />
+        <ellipse
+           ry="3.7352931"
+           rx="3.1703911"
+           transform="scale(-1,1)"
+           cy="207.93138"
+           cx="-131.2272"
+           id="ellipse1043"
+           style="fill:url(#radialGradient1063);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314" />
+        <ellipse
+           ry="3.7352931"
+           rx="3.1703911"
+           transform="scale(-1,1)"
+           cy="207.93137"
+           cx="-122.77282"
+           id="ellipse1045"
+           style="fill:url(#radialGradient1065);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314" />
+        <ellipse
+           style="fill:url(#radialGradient1067);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314"
+           id="ellipse1047"
+           cx="-127"
+           cy="207.93137"
+           transform="scale(-1,1)"
+           rx="3.1703911"
+           ry="3.7352931" />
+        <rect
+           y="176.80392"
+           x="-130.17039"
+           height="2.4901967"
+           width="6.3407836"
+           id="rect1049"
+           style="fill:url(#linearGradient1069);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           transform="scale(-1,1)" />
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1071);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           id="rect1051"
+           width="6.3407836"
+           height="2.4901967"
+           x="-130.17039"
+           y="184.27451" />
+        <rect
+           y="191.7451"
+           x="-130.17039"
+           height="2.4901967"
+           width="6.3407836"
+           id="rect1053"
+           style="fill:url(#linearGradient1073);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           transform="scale(-1,1)" />
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1075);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           id="rect1055"
+           width="6.3407836"
+           height="2.4901967"
+           x="-130.17039"
+           y="199.21568" />
+      </g>
+      <g
+         transform="matrix(0.70193324,0,0,0.70193324,-60.23952,-10.029779)"
+         id="g1095">
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1097);fill-opacity:1;stroke-width:5.52638;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5.52638, 22.1054"
+           id="rect1077"
+           width="6.3407836"
+           height="37.352932"
+           x="-130.17039"
+           y="169.33333" />
+        <rect
+           y="169.33333"
+           x="-130.17039"
+           height="2.4901967"
+           width="6.3407836"
+           id="rect1079"
+           style="fill:url(#linearGradient1099);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           transform="scale(-1,1)" />
+        <ellipse
+           style="fill:url(#radialGradient1101);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314"
+           id="ellipse1081"
+           cx="-131.2272"
+           cy="207.93138"
+           transform="scale(-1,1)"
+           rx="3.1703911"
+           ry="3.7352931" />
+        <ellipse
+           style="fill:url(#radialGradient1103);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314"
+           id="ellipse1083"
+           cx="-122.77282"
+           cy="207.93137"
+           transform="scale(-1,1)"
+           rx="3.1703911"
+           ry="3.7352931" />
+        <ellipse
+           ry="3.7352931"
+           rx="3.1703911"
+           transform="scale(-1,1)"
+           cy="207.93137"
+           cx="-127"
+           id="ellipse1085"
+           style="fill:url(#radialGradient1105);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314" />
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1107);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           id="rect1087"
+           width="6.3407836"
+           height="2.4901967"
+           x="-130.17039"
+           y="176.80392" />
+        <rect
+           y="184.27451"
+           x="-130.17039"
+           height="2.4901967"
+           width="6.3407836"
+           id="rect1089"
+           style="fill:url(#linearGradient1109);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           transform="scale(-1,1)" />
+        <rect
+           transform="scale(-1,1)"
+           style="fill:url(#linearGradient1111);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           id="rect1091"
+           width="6.3407836"
+           height="2.4901967"
+           x="-130.17039"
+           y="191.7451" />
+        <rect
+           y="199.21568"
+           x="-130.17039"
+           height="2.4901967"
+           width="6.3407836"
+           id="rect1093"
+           style="fill:url(#linearGradient1113);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+           transform="scale(-1,1)" />
+      </g>
+    </g>
     <path
-       id="path838"
-       style="fill:url(#radialGradient852);fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
-       d="m 84.666667,38.944788 c 0,14.028031 -7.581312,20.321877 -16.933333,20.321877 C 58.381312,59.266665 50.8,52.972819 50.8,38.944788 50.8,24.916755 60.154438,8.4666667 67.733334,8.4666667 c 7.578895,0 16.933333,16.4500883 16.933333,30.4781213 z"
+       id="path835"
+       style="fill:#ff0000;fill-opacity:1;stroke-width:1.41425;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.41425, 5.65701"
+       d="m 42.333336,49.105727 c 0,7.014015 -3.790656,10.160938 -8.466667,10.160938 -4.676011,0 -8.466667,-3.146923 -8.466667,-10.160938 0,-7.014016 4.677219,-15.23906 8.466667,-15.23906 3.789448,0 8.466667,8.225044 8.466667,15.23906 z"
        sodipodi:nodetypes="ssszs"
        inkscape:export-xdpi="48"
        inkscape:export-ydpi="48" />
-    <ellipse
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)"
-       ry="1.9938798"
-       rx="1.6596087"
-       cy="52.001514"
-       cx="56.606503"
-       id="path840"
-       style="fill:#deaa87;fill-opacity:1;stroke-width:1.13692;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.13692, 4.54769000000000023" />
-    <ellipse
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       style="fill:#deaa87;fill-opacity:1;stroke-width:0.814533;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.814533, 3.25814"
-       id="ellipse842"
-       cx="57.794415"
-       cy="58.535515"
-       rx="1.1890068"
-       ry="1.4284914"
-       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)" />
-    <ellipse
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)"
-       ry="2.3760469"
-       rx="1.977706"
-       cy="56.582512"
-       cx="53.021572"
-       id="ellipse844"
-       style="fill:#deaa87;fill-opacity:1;stroke-width:1.35483;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.35483, 5.41935" />
-    <ellipse
-       inkscape:export-ydpi="48"
-       inkscape:export-xdpi="48"
-       ry="4.2333331"
-       rx="4.2333322"
-       cy="29.633333"
-       cx="105.83334"
-       id="path854"
-       style="fill:#00ff00;fill-opacity:1;stroke-width:2.60528;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.60528, 10.42109999999999914" />
     <path
        inkscape:export-ydpi="48"
        inkscape:export-xdpi="48"
        sodipodi:nodetypes="ssszs"
-       d="m 84.666667,98.211455 c 0,14.028035 -7.581312,20.321875 -16.933333,20.321875 -9.352022,0 -16.933334,-6.29384 -16.933334,-20.321875 0,-14.028033 9.354438,-30.478121 16.933334,-30.478121 7.578895,0 16.933333,16.450088 16.933333,30.478121 z"
-       style="fill:#ffe800;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
-       id="path849"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png" />
-    <g
-       id="g874"
-       transform="translate(-22.784727,-9.9557903)"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       d="m 84.666667,38.944788 c 0,14.028031 -7.581312,20.321877 -16.933333,20.321877 C 58.381312,59.266665 50.8,52.972819 50.8,38.944788 50.8,24.916755 60.154438,8.4666667 67.733334,8.4666667 c 7.578895,0 16.933333,16.4500883 16.933333,30.4781213 z"
+       style="fill:url(#radialGradient852);fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
+       id="path838" />
+    <ellipse
+       style="fill:#deaa87;fill-opacity:1;stroke-width:1.13692;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.13692, 4.54769000000000023"
+       id="path840"
+       cx="56.606503"
+       cy="52.001514"
+       rx="1.6596087"
+       ry="1.9938798"
+       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)"
        inkscape:export-xdpi="48"
-       inkscape:export-ydpi="48">
+       inkscape:export-ydpi="48" />
+    <ellipse
+       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)"
+       ry="1.4284914"
+       rx="1.1890068"
+       cy="58.535515"
+       cx="57.794415"
+       id="ellipse842"
+       style="fill:#deaa87;fill-opacity:1;stroke-width:0.814533;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.814533, 3.25814"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <ellipse
+       style="fill:#deaa87;fill-opacity:1;stroke-width:1.35483;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.35483, 5.41935"
+       id="ellipse844"
+       cx="53.021572"
+       cy="56.582512"
+       rx="1.977706"
+       ry="2.3760469"
+       transform="matrix(0.82922118,-0.55892059,0.4711052,0.88207703,0,0)"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <ellipse
+       style="fill:#00ff00;fill-opacity:1;stroke-width:2.60528;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.60528, 10.42109999999999914"
+       id="path854"
+       cx="105.83334"
+       cy="29.633333"
+       rx="4.2333322"
+       ry="4.2333331"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <path
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       id="path849"
+       style="fill:url(#radialGradient1185);fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.31400000000000006"
+       d="m 84.666667,98.211455 c 0,14.028035 -7.581312,20.321875 -16.933333,20.321875 -9.352022,0 -16.933334,-6.29384 -16.933334,-20.321875 0,-14.028033 9.354438,-30.478121 16.933334,-30.478121 7.578895,0 16.933333,16.450088 16.933333,30.478121 z"
+       sodipodi:nodetypes="ssszs"
+       inkscape:export-xdpi="48"
+       inkscape:export-ydpi="48" />
+    <g
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       transform="translate(-22.784727,-9.9557903)"
+       id="g874">
+      <ellipse
+         style="fill:#1a1a1a;fill-opacity:1;stroke-width:1.15144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.15144, 4.60575"
+         id="ellipse856"
+         cx="95.004318"
+         cy="86.537651"
+         rx="1.8709805"
+         ry="1.8709809"
+         inkscape:export-xdpi="48"
+         inkscape:export-ydpi="48" />
+      <ellipse
+         inkscape:export-ydpi="48"
+         inkscape:export-xdpi="48"
+         ry="0.65156341"
+         rx="0.65156323"
+         cy="85.451866"
+         cx="95.622375"
+         id="ellipse858"
+         style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.400986;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.400986, 1.60394" />
+    </g>
+    <g
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       transform="translate(-0.9354433,2.0045214)"
+       id="g870">
       <ellipse
          inkscape:export-ydpi="48"
          inkscape:export-xdpi="48"
          ry="1.8709809"
          rx="1.8709805"
-         cy="86.537651"
-         cx="95.004318"
-         id="ellipse856"
+         cy="74.91143"
+         cx="64.067871"
+         id="ellipse864"
          style="fill:#1a1a1a;fill-opacity:1;stroke-width:1.15144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.15144, 4.60575" />
       <ellipse
          style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.400986;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.400986, 1.60394"
-         id="ellipse858"
-         cx="95.622375"
-         cy="85.451866"
-         rx="0.65156323"
-         ry="0.65156341"
-         inkscape:export-xdpi="48"
-         inkscape:export-ydpi="48" />
-    </g>
-    <g
-       id="g870"
-       transform="translate(-0.9354433,2.0045214)"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
-       inkscape:export-xdpi="48"
-       inkscape:export-ydpi="48">
-      <ellipse
-         style="fill:#1a1a1a;fill-opacity:1;stroke-width:1.15144;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.15144, 4.60575"
-         id="ellipse864"
-         cx="64.067871"
-         cy="74.91143"
-         rx="1.8709805"
-         ry="1.8709809"
-         inkscape:export-xdpi="48"
-         inkscape:export-ydpi="48" />
-      <ellipse
-         inkscape:export-ydpi="48"
-         inkscape:export-xdpi="48"
-         ry="0.65156341"
-         rx="0.65156323"
-         cy="73.825645"
-         cx="64.685928"
          id="ellipse866"
-         style="fill:#e6e6e6;fill-opacity:1;stroke-width:0.400986;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.400986, 1.60394" />
+         cx="64.685928"
+         cy="73.825645"
+         rx="0.65156323"
+         ry="0.65156341"
+         inkscape:export-xdpi="48"
+         inkscape:export-ydpi="48" />
     </g>
     <path
-       sodipodi:type="star"
-       style="fill:#ff7f2a;fill-opacity:1;stroke-width:1.41119;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.41119, 5.64476"
-       id="path878"
-       sodipodi:sides="3"
-       sodipodi:cx="67.808085"
-       sodipodi:cy="82.437597"
-       sodipodi:r1="4.5158238"
-       sodipodi:r2="2.438545"
-       sodipodi:arg1="1.5707963"
-       sodipodi:arg2="2.6179939"
-       inkscape:flatsided="false"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
-       d="m 67.808083,86.953423 -2.111842,-3.296551 -1.798977,-3.477185 3.910819,-0.180633 3.910818,0.180633 -1.798977,3.477185 z"
-       inkscape:transform-center-y="1.0386368"
-       inkscape:transform-center-x="2.1666706e-06"
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
        inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       inkscape:transform-center-x="2.1666706e-06"
+       inkscape:transform-center-y="1.0386368"
+       d="m 67.808083,86.953423 -2.111842,-3.296551 -1.798977,-3.477185 3.910819,-0.180633 3.910818,0.180633 -1.798977,3.477185 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="false"
+       sodipodi:arg2="2.6179939"
+       sodipodi:arg1="1.5707963"
+       sodipodi:r2="2.438545"
+       sodipodi:r1="4.5158238"
+       sodipodi:cy="82.437597"
+       sodipodi:cx="67.808085"
+       sodipodi:sides="3"
+       id="path878"
+       style="fill:#ff7f2a;fill-opacity:1;stroke-width:1.41119;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.41119, 5.64476"
+       sodipodi:type="star" />
+    <g
+       id="g1037">
+      <rect
+         y="169.33333"
+         x="-130.17039"
+         height="37.352932"
+         width="6.3407836"
+         id="rect868"
+         style="fill:url(#linearGradient978);fill-opacity:1;stroke-width:5.52638;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:5.52638, 22.1054"
+         transform="scale(-1,1)" />
+      <rect
+         transform="scale(-1,1)"
+         style="fill:url(#linearGradient1002);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+         id="rect900"
+         width="6.3407836"
+         height="2.4901967"
+         x="-130.17039"
+         y="169.33333" />
+      <ellipse
+         ry="3.7352931"
+         rx="3.1703911"
+         transform="scale(-1,1)"
+         cy="207.93138"
+         cx="-131.2272"
+         id="ellipse910"
+         style="fill:url(#radialGradient920);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314" />
+      <ellipse
+         ry="3.7352931"
+         rx="3.1703911"
+         transform="scale(-1,1)"
+         cy="207.93137"
+         cx="-122.77282"
+         id="ellipse926"
+         style="fill:url(#radialGradient928);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314" />
+      <ellipse
+         style="fill:url(#radialGradient924);fill-opacity:1;stroke-width:4.00786;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:4.00786, 16.0314"
+         id="ellipse922"
+         cx="-127"
+         cy="207.93137"
+         transform="scale(-1,1)"
+         rx="3.1703911"
+         ry="3.7352931" />
+      <rect
+         y="176.80392"
+         x="-130.17039"
+         height="2.4901967"
+         width="6.3407836"
+         id="rect1012"
+         style="fill:url(#linearGradient1014);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+         transform="scale(-1,1)" />
+      <rect
+         transform="scale(-1,1)"
+         style="fill:url(#linearGradient1018);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+         id="rect1016"
+         width="6.3407836"
+         height="2.4901967"
+         x="-130.17039"
+         y="184.27451" />
+      <rect
+         y="191.7451"
+         x="-130.17039"
+         height="2.4901967"
+         width="6.3407836"
+         id="rect1020"
+         style="fill:url(#linearGradient1022);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+         transform="scale(-1,1)" />
+      <rect
+         transform="scale(-1,1)"
+         style="fill:url(#linearGradient1026);fill-opacity:1;stroke-width:1.42691;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1.42691, 5.70759"
+         id="rect1024"
+         width="6.3407836"
+         height="2.4901967"
+         x="-130.17039"
+         y="199.21568" />
+    </g>
+    <path
+       transform="scale(0.26458333)"
+       d="M 480.25391 249.93945 C 476.1397 249.93945 471.88753 251.22818 467.62109 253.58203 C 494.8419 268.55713 527.88252 316.90182 537.77148 363.49219 C 540.00558 374.01783 541.10046 383.67849 541.2207 392.51367 C 543.18522 384.43889 544.25391 375.33248 544.25391 365.13281 C 544.25391 312.11348 508.89853 249.93945 480.25391 249.93945 z "
+       style="fill:#ffff00;fill-opacity:1;stroke-width:10.6904;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:10.6904, 42.7616"
+       id="path1199" />
+    <path
+       d="m 145.24168,55.572318 c -0.28061,0 -0.56413,0.02562 -0.84904,0.06976 6.3796,4.575252 13.38373,14.01496 17.19481,24.056411 -2.15782,-12.201443 -9.89315,-24.126174 -16.34577,-24.126174 z"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.314"
+       id="path1205" />
+    <path
+       d="m 140.89984,60.398449 c -0.9269,-0.005 -1.88176,0.237603 -2.84391,0.689999 6.71179,3.457407 14.79988,13.522889 19.22039,24.516867 -1.83257,-12.548733 -9.74915,-25.170991 -16.37648,-25.206866 z"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.314"
+       id="path1210" />
+    <path
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png"
+       id="path1215"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.314"
+       d="m 284.45064,98.34509 c 0,14.02803 -7.58131,20.32187 -16.93333,20.32187 -9.35202,0 -16.93333,-6.29384 -16.93333,-20.32187 0,-14.028033 9.35443,-30.478121 16.93333,-30.478121 7.57889,0 16.93333,16.450088 16.93333,30.478121 z"
+       sodipodi:nodetypes="ssszs"
        inkscape:export-xdpi="48"
        inkscape:export-ydpi="48" />
     <path
        inkscape:export-ydpi="48"
        inkscape:export-xdpi="48"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Fuzz.png"
-       transform="matrix(0.05278467,0,0,0.40210457,82.582687,44.007229)"
-       inkscape:transform-center-y="-0.7830321"
-       d="m 101.6,84.666665 3.95947,6.180666 3.37288,6.519334 -7.33235,0.338666 -7.33235,-0.338667 3.37288,-6.519333 z"
-       inkscape:randomized="0"
-       inkscape:rounded="0"
-       inkscape:flatsided="false"
-       sodipodi:arg2="-0.52359878"
-       sodipodi:arg1="-1.5707963"
-       sodipodi:r2="4.572"
-       sodipodi:r1="8.4666662"
-       sodipodi:cy="93.133331"
-       sodipodi:cx="101.6"
-       sodipodi:sides="3"
-       id="path859"
-       style="fill:#ffe800;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.5833"
-       sodipodi:type="star" />
+       sodipodi:nodetypes="ssszs"
+       d="m 286.1973,99.466011 c 4.32558,16.839459 -1.77653,26.460679 -11.69789,29.009199 -9.92135,2.54852 -19.90492,-2.94073 -24.23052,-19.78019 -4.32558,-16.839477 0.52588,-39.135595 8.56617,-41.200921 8.04027,-2.065324 23.03663,15.132438 27.36224,31.971912 z"
+       style="fill:#ff2a2a;fill-opacity:1;stroke-width:3.29556;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3.29556, 13.1823"
+       id="path1217"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\Entities\Characters\Player\Chick.png" />
+    <path
+       id="path1220"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.314"
+       d="m 125.27075,67.383631 c -0.91904,0.120531 -1.83226,0.49017 -2.72431,1.068658 7.11806,2.516929 16.49437,11.394771 22.36255,21.689082 -3.51455,-12.18511 -13.06706,-23.619409 -19.63824,-22.75774 z" />
+    <path
+       id="path1222"
+       style="fill:#ffff00;fill-opacity:1;stroke-width:2.8285;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.8285, 11.314"
+       d="m 131.26916,72.674011 c -0.27942,-0.02588 -0.56409,-0.02648 -0.85186,-0.0088 5.93038,5.1442 12.03393,15.189725 14.90254,25.539901 -1.02316,-12.348463 -7.62558,-24.935863 -14.05068,-25.531052 z" />
   </g>
 </svg>
