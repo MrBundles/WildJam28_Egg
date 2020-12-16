@@ -3,6 +3,12 @@ extends RigidBody2D
 #rng
 var rng = RandomNumberGenerator.new()
 
+#variables
+var leg_max_y = 65
+var leg_accel = 7.5
+var wing_max_rotation = 95
+var wing_accel = 7.5
+
 #exports
 export var egg_texture : Texture = Texture.new()
 export var chick_texture : Texture = Texture.new()
@@ -10,6 +16,7 @@ export var torque_force = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
 export var alpha_threshhold = .5
+export var jump_force = 750
 
 func _ready():	
 	rng.randomize()
@@ -20,11 +27,30 @@ func _ready():
 	
 
 func _integrate_forces(state):
-	if state.get_contact_count() > 0:
-		if Input.is_action_pressed("ui_left"):
-			apply_torque_impulse(-torque_force)
-		if Input.is_action_pressed("ui_right"):
-			apply_torque_impulse(torque_force)
+	if Input.is_action_pressed("ui_left"):
+		apply_torque_impulse(-torque_force)
+	if Input.is_action_pressed("ui_right"):
+		apply_torque_impulse(torque_force)
+	if Input.is_action_just_pressed("ui_up") and state.get_contact_count() > 0 and $ShellPolygons.get_child_count() < 1:
+		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
+	
+	if Input.is_action_pressed("ui_up") and $ShellPolygons.get_child_count() < 1 and linear_velocity.y < 0:
+		if $LegSprite.position.y < leg_max_y - leg_accel:
+			$LegSprite.position.y += leg_accel
+	else:
+		if $LegSprite.position.y > leg_accel:
+			$LegSprite.position.y -= leg_accel
+		
+	if Input.is_action_pressed("ui_up") and $ShellPolygons.get_child_count() < 1 and linear_velocity.y > 0:
+		if $RightWing.rotation_degrees > wing_accel:
+			$RightWing.rotation_degrees -= wing_accel
+		if $LeftWing.rotation_degrees < wing_accel:
+			$LeftWing.rotation_degrees += wing_accel
+	else:
+		if $RightWing.rotation_degrees < wing_max_rotation - wing_accel/2:
+			$RightWing.rotation_degrees += wing_accel/2
+		if $LeftWing.rotation_degrees > -wing_max_rotation + wing_accel/2:
+			$LeftWing.rotation_degrees -= wing_accel/2
 	
 	if Input.is_action_just_pressed("ui_select") and state.get_contact_count() > 0:
 		_break_shell(to_local(state.get_contact_collider_position(0)), 500)

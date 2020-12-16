@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Egg.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Characters/Player/Fuzz.png" type="Texture" id=3]
 [ext_resource path="res://Entities/Characters/Player/Chick.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Characters/Player/Legs.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Characters/Player/Wing.png" type="Texture" id=6]
 
 [sub_resource type="Curve" id=1]
 min_value = -1.0
@@ -52,6 +54,34 @@ chick_texture = ExtResource( 4 )
 torque_force = 300
 shard_length = 8
 alpha_threshhold = 0.999
+jump_force = 500
+
+[node name="LegSprite" type="Sprite" parent="."]
+position = Vector2( -1.12245, 65.9446 )
+texture = ExtResource( 5 )
+
+[node name="RightWing" type="Node2D" parent="."]
+position = Vector2( 16, -24 )
+rotation = 0.0122173
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RightWingSprite" type="Sprite" parent="RightWing"]
+position = Vector2( 32, 0 )
+texture = ExtResource( 6 )
+
+[node name="LeftWing" type="Node2D" parent="."]
+position = Vector2( -16, -24 )
+rotation = -0.0453786
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RightWingSprite" type="Sprite" parent="LeftWing"]
+position = Vector2( -32, 0 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 6 )
 
 [node name="FuzzParticles2D" type="Particles2D" parent="."]
 visible = false

@@ -5,12 +5,6 @@ export var polygon_points : PoolVector2Array = PoolVector2Array() setget _set_po
 export var texture_polygon_texture : Texture = Texture.new() setget _set_texture_polygon_texture
 
 
-#func _ready():
-#	_set_collision_polygon_points(collision_polygon_points)
-#	_set_texture_polygon_points(texture_polygon_points)
-#	_set_texture_polygon_texture()
-
-
 func _set_polygon_points(new_val):
 	polygon_points = new_val
 	$CollisionPolygon2D.polygon = polygon_points
