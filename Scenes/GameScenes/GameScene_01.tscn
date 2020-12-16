@@ -20,7 +20,49 @@ __meta__ = {
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 511, 511 )
 
+[node name="Ground3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2566.65, 948.828 )
+
+[node name="Ground4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -850.537, 996.882 )
+
+[node name="Ground5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 174.62, 1600.23 )
+
+[node name="Ground8" parent="." instance=ExtResource( 1 )]
+position = Vector2( -871.898, 2143.29 )
+
+[node name="Ground9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 185.934, 2737.26 )
+
+[node name="Ground10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1356.9, 3308.6 )
+
+[node name="Ground11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2697.58, 2788.17 )
+
+[node name="Ground14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3715.81, 2788.17 )
+
+[node name="Ground12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1328.62, 2165.92 )
+
+[node name="Ground13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3534.79, 2216.83 )
+
+[node name="Ground6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1173.08, 1600.23 )
+
+[node name="Ground7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2128.83, 1760.41 )
+rotation = 0.326109
+
+[node name="Ground2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1473.53, 369.192 )
+rotation = -0.30942
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 656.64, 220.003 )
+position = Vector2( 472.839, 360.571 )
+damage_threshhold = 500
 
 [node name="Shard" parent="." instance=ExtResource( 3 )]

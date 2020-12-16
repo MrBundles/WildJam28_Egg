@@ -23,19 +23,23 @@ size = Vector2( 64, 96 )
 
 [node name="Player" type="RigidBody2D"]
 collision_layer = 2
-gravity_scale = 10.0
+gravity_scale = 7.0
 contacts_reported = 1
 contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
 egg_texture = ExtResource( 2 )
 chick_texture = ExtResource( 4 )
-torque_force = 300
-shard_length = 8
+torque_force_grounded = 550
+torque_force_ungrounded = 150
 alpha_threshhold = 0.999
+damage_threshhold = 375
+max_jump_force = 1500.0
+jump_force_accel = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Legs" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -47,8 +51,6 @@ texture = ExtResource( 7 )
 
 [node name="Wings" type="Node2D" parent="."]
 script = ExtResource( 5 )
-
-[node name="WingTween" type="Tween" parent="Wings"]
 
 [node name="RightWing" type="Node2D" parent="Wings"]
 position = Vector2( 16, -24 )
@@ -89,7 +91,6 @@ texture = SubResource( 5 )
 [node name="ShellPolygons" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-visible = false
 margin_left = 32.0
 margin_right = 115.0
 margin_bottom = 14.0

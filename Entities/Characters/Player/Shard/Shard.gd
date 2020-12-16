@@ -7,7 +7,6 @@ export var texture_polygon_texture : Texture = Texture.new() setget _set_texture
 
 func _process(delta):
 	if not $Timer.is_stopped():
-		print($Timer.time_left / $Timer.wait_time)
 		$TexturePolygon2D.color.a = $Timer.time_left / $Timer.wait_time
 
 

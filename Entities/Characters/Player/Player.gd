@@ -5,26 +5,33 @@ var rng = RandomNumberGenerator.new()
 
 #variables
 var leg_max_y : float = 65
-var leg_accel : float = 7.5
 var wing_max_rotation : float = 95
 var jump_force : float = 0
 var jump_force_decreasing : bool = false
-var max_jump_force : float = 1000
-var jump_force_accel : float = 7
-var jump_force_decel : float = 50
+var previous_velocity : float = 0
+var current_collision_pos = Vector2.ZERO
 
 #exports
 export var egg_texture : Texture = Texture.new()
 export var chick_texture : Texture = Texture.new()
-export var torque_force = 50
+export var torque_force_grounded = 50
+export var torque_force_ungrounded = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
 export var alpha_threshhold = .5
+export var damage_threshhold = 500
+export var damage_multiplier = 1
+
+export var leg_accel : float = 7.5
+export var max_jump_force : float = 2000
+export var jump_force_accel : float = 8
+export var jump_force_decel : float = 50
+
 
 func _ready():	
 	rng.randomize()
 	
-	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 10)
+	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 16)
 	$ChickPolygon2D.polygon = $CollisionPolygon2D.polygon
 	generate_shell($CollisionPolygon2D.polygon)
 
@@ -34,10 +41,27 @@ func _process(delta):
 
 
 func _integrate_forces(state):
+	current_collision_pos = state.get_contact_collider_position(0)
+	
+	if state.get_contact_count() > 0 and previous_velocity > damage_threshhold:
+		while $ShellPolygons.get_child_count() > 0:
+			print($ShellPolygons.get_child_count())
+			_break_shell(state.get_contact_collider_position(0), 2000)
+			yield(get_tree(),"idle_frame")
+			print($ShellPolygons.get_child_count())
+	$Label.text = "Last Damage: " + str(previous_velocity * damage_multiplier)
+	previous_velocity = linear_velocity.length()
+	
 	if Input.is_action_pressed("ui_left"):
-		apply_torque_impulse(-torque_force)
+		if state.get_contact_count() > 0:
+			apply_torque_impulse(-torque_force_grounded)
+		else:
+			apply_torque_impulse(-torque_force_ungrounded)
 	if Input.is_action_pressed("ui_right"):
-		apply_torque_impulse(torque_force)
+		if state.get_contact_count() > 0:
+			apply_torque_impulse(torque_force_grounded)
+		else:
+			apply_torque_impulse(torque_force_ungrounded)
 	if Input.is_action_pressed("ui_up"):
 		if jump_force_decreasing:
 			jump_force = clamp(jump_force - jump_force_accel, 0, max_jump_force)
@@ -54,7 +78,7 @@ func _integrate_forces(state):
 	
 	if Input.is_action_just_released("ui_up") and state.get_contact_count() > 0 and $ShellPolygons.get_child_count() < 1:
 		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
-		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, jump_force / max_jump_force * leg_max_y, .2, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, jump_force / max_jump_force * leg_max_y, .1, Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Legs/LegTween.start()
 		yield($Legs/LegTween, "tween_all_completed")
 		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, 0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
@@ -144,28 +168,10 @@ func generate_shell(points : PoolVector2Array):
 
 # apply break to shell and remove shell fragment from player object
 func _break_shell(collider_position : Vector2, damage : float):
-	var polygon_scores = []
-	var polygons = []
-	
-	#score all polygons
-	for polygon in $ShellPolygons.get_children():
-		var current_polygon_score = 0
-		for point in polygon.polygon:
-			current_polygon_score += point.distance_to(collider_position)
-		
-		polygon_scores.append(current_polygon_score)
-		polygons.append(polygon)
-	
-	#sort polygon score array
-	polygon_scores.sort()
 	
 	#sort polygons based on score
-	for polygon in $ShellPolygons.get_children():
-		var current_polygon_score = 0
-		for point in polygon.polygon:
-			current_polygon_score += point.distance_to(collider_position)
-		
-		polygons[polygon_scores.find(current_polygon_score)] = polygon
+	var polygons = $ShellPolygons.get_children().duplicate()
+	polygons.sort_custom(self, "sort_polyscore")
 	
 	#remove closest polygons from polygon array and add to array for removal
 	var polygons_to_remove = []
@@ -175,7 +181,7 @@ func _break_shell(collider_position : Vector2, damage : float):
 		polygons.remove(0)
 	
 	if polygons_to_remove.size() > 0:
-	
+
 		# create a new shard instance and populate shard data
 		var shard_instance = preload("res://Entities/Characters/Player/Shard/Shard.tscn").instance()
 		shard_instance.polygon_points = _get_combined_polygon_outline(polygons_to_remove.duplicate())
@@ -183,11 +189,23 @@ func _break_shell(collider_position : Vector2, damage : float):
 		shard_instance.global_position = global_position + shard_instance.position
 		shard_instance.global_rotation = global_rotation
 		get_tree().root.add_child(shard_instance)
-		
-		
+
+
 		#clear polygons to remove array
 		for polygon in polygons_to_remove:
 			polygon.queue_free()
+
+
+# sorts two given polygons based on the average distance of their vertices to a given point
+func sort_polyscore(poly_a, poly_b) -> bool:
+	var poly_a_score = 0
+	var poly_b_score = 0
+	
+	for i in range(3):
+		poly_a_score += poly_a.polygon[i].distance_to(current_collision_pos)
+		poly_b_score += poly_b.polygon[i].distance_to(current_collision_pos)
+	
+	return poly_a_score < poly_b_score
 
 
 # takes in a list of polygons and returns the points of a single combined polygon
@@ -198,9 +216,10 @@ func _get_combined_polygon_outline(polygons) -> PoolVector2Array:
 		for i in range(1, polygons.size()):
 			if polygon_to_add == null:
 				for point_i in polygons[i].polygon:
-					for point_j in polygons[0].polygon:
-						if point_i.distance_to(point_j) < 1:
-							polygon_to_add = polygons[i]
+					if polygon_to_add == null:
+						for point_j in polygons[0].polygon:
+							if point_i.distance_to(point_j) < 1 and polygon_to_add == null:
+								polygon_to_add = polygons[i]
 		
 		if polygon_to_add != null:
 			var transA = Transform2D(0.0, polygons[0].global_position)
