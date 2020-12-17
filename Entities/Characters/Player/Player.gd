@@ -16,9 +16,8 @@ export var leg_accel : float = 7.5
 export var max_jump_force : float = 2000
 export var jump_force_accel : float = 8
 export var jump_force_decel : float = 50
-
-export var path_projectile_spread = .5
-export var path_projectile_mult = 10
+export var path_projectile_spread : float = .5
+export(Curve) var path_projectile_curve
 
 #variables
 var leg_max_y : float = 65
@@ -27,7 +26,7 @@ var jump_force : float = 0
 var jump_force_decreasing : bool = false
 var previous_velocity : float = 0
 var current_collision_pos = Vector2.ZERO
-var path_projectile_spread_count = path_projectile_spread
+var path_projectile_spread_count : float = path_projectile_spread
 
 
 func _ready():	
@@ -39,13 +38,13 @@ func _ready():
 
 
 func _physics_process(delta):
-	if Input.is_action_pressed("ui_up"):
-		if path_projectile_spread_count >= path_projectile_spread:
+	if $ShellPolygons.get_child_count() < 1:
+		if path_projectile_spread_count > path_projectile_spread:
 			var path_projectile_instance = preload("res://Entities/Characters/Player/PathProjectile/PathProjectile.tscn").instance()
 			path_projectile_instance.global_position = global_position
-			path_projectile_instance.path_projectile_mult = path_projectile_mult
+			path_projectile_instance.global_rotation = global_rotation
+			path_projectile_instance.max_alpha = path_projectile_curve.interpolate(previous_velocity / damage_threshhold)
 			get_tree().root.add_child(path_projectile_instance)
-			path_projectile_instance.initial_impulse = Vector2(0,-jump_force).rotated(rotation)
 			path_projectile_spread_count = 0
 		else:
 			path_projectile_spread_count += delta
@@ -101,11 +100,11 @@ func _integrate_forces(state):
 		$Legs/LegTween.start()
 	
 	if $ShellPolygons.get_child_count() < 1:
-		$Wings/RightWing.rotation_degrees = (1 - (jump_force / max_jump_force)) * wing_max_rotation
-		$Wings/LeftWing.rotation_degrees = (1 - (jump_force / max_jump_force)) * -wing_max_rotation
+		$Wings/RightWing.rotation_degrees = (jump_force / max_jump_force) * -wing_max_rotation
+		$Wings/LeftWing.rotation_degrees = (jump_force / max_jump_force) * wing_max_rotation
 	else:
-		$Wings/RightWing.rotation_degrees = wing_max_rotation
-		$Wings/LeftWing.rotation_degrees = -wing_max_rotation
+		$Wings/RightWing.rotation_degrees = 0
+		$Wings/LeftWing.rotation_degrees = 0
 
 
 # trace outline of given texture and return array of points for polygon generation

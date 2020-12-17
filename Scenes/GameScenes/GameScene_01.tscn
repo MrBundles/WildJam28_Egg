@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Entities/Environment/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entities/Characters/Player/Shard/Shard.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Entities/Characters/Player/PathProjectile/PathProjectile.tscn" type="PackedScene" id=4]
 
 [node name="GameScene" type="Node2D"]
 
@@ -21,6 +20,7 @@ __meta__ = {
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 474.426, 49.4407 )
 damage_threshhold = 500
+path_projectile_spread = 0.1
 
 [node name="Shard" parent="." instance=ExtResource( 3 )]
 
@@ -69,5 +69,3 @@ rotation = 0.326109
 [node name="Ground2" parent="Environment" instance=ExtResource( 1 )]
 position = Vector2( 1473.53, 369.192 )
 rotation = -0.30942
-
-[node name="PathProjectile" parent="." instance=ExtResource( 4 )]
