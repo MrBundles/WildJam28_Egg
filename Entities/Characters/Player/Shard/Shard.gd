@@ -1,12 +1,15 @@
 extends RigidBody2D
 
+#variables
+var fade_flag = false
+
 #exports
 export var polygon_points : PoolVector2Array = PoolVector2Array() setget _set_polygon_points
 export var texture_polygon_texture : Texture = Texture.new() setget _set_texture_polygon_texture
 
 
 func _process(delta):
-	if not $Timer.is_stopped():
+	if not $Timer.is_stopped() and fade_flag:
 		$TexturePolygon2D.color.a = $Timer.time_left / $Timer.wait_time
 
 
@@ -27,4 +30,8 @@ func _set_texture_polygon_texture(new_val):
 
 
 func _on_Timer_timeout():
-	queue_free()
+	if fade_flag:
+		queue_free()
+	else:
+		fade_flag = true
+		$Timer.start()

@@ -3,14 +3,6 @@ extends RigidBody2D
 #rng
 var rng = RandomNumberGenerator.new()
 
-#variables
-var leg_max_y : float = 65
-var wing_max_rotation : float = 95
-var jump_force : float = 0
-var jump_force_decreasing : bool = false
-var previous_velocity : float = 0
-var current_collision_pos = Vector2.ZERO
-
 #exports
 export var egg_texture : Texture = Texture.new()
 export var chick_texture : Texture = Texture.new()
@@ -18,14 +10,24 @@ export var torque_force_grounded = 50
 export var torque_force_ungrounded = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
-export var alpha_threshhold = .5
 export var damage_threshhold = 500
-export var damage_multiplier = 1
 
 export var leg_accel : float = 7.5
 export var max_jump_force : float = 2000
 export var jump_force_accel : float = 8
 export var jump_force_decel : float = 50
+
+export var path_projectile_spread = .5
+export var path_projectile_mult = 10
+
+#variables
+var leg_max_y : float = 65
+var wing_max_rotation : float = 95
+var jump_force : float = 0
+var jump_force_decreasing : bool = false
+var previous_velocity : float = 0
+var current_collision_pos = Vector2.ZERO
+var path_projectile_spread_count = path_projectile_spread
 
 
 func _ready():	
@@ -36,20 +38,29 @@ func _ready():
 	generate_shell($CollisionPolygon2D.polygon)
 
 
-func _process(delta):
-	pass
+func _physics_process(delta):
+	if Input.is_action_pressed("ui_up"):
+		if path_projectile_spread_count >= path_projectile_spread:
+			var path_projectile_instance = preload("res://Entities/Characters/Player/PathProjectile/PathProjectile.tscn").instance()
+			path_projectile_instance.global_position = global_position
+			path_projectile_instance.path_projectile_mult = path_projectile_mult
+			get_tree().root.add_child(path_projectile_instance)
+			path_projectile_instance.initial_impulse = Vector2(0,-jump_force).rotated(rotation)
+			path_projectile_spread_count = 0
+		else:
+			path_projectile_spread_count += delta
 
 
 func _integrate_forces(state):
 	current_collision_pos = state.get_contact_collider_position(0)
 	
+	if state.get_contact_count() > 0:
+		$CoyoteTimer.start()
+	
 	if state.get_contact_count() > 0 and previous_velocity > damage_threshhold:
 		while $ShellPolygons.get_child_count() > 0:
-			print($ShellPolygons.get_child_count())
-			_break_shell(state.get_contact_collider_position(0), 2000)
-			yield(get_tree(),"idle_frame")
-			print($ShellPolygons.get_child_count())
-	$Label.text = "Last Damage: " + str(previous_velocity * damage_multiplier)
+			_break_shell(state.get_contact_collider_position(0), 750)
+			yield(get_tree(),"physics_frame")
 	previous_velocity = linear_velocity.length()
 	
 	if Input.is_action_pressed("ui_left"):
@@ -71,12 +82,17 @@ func _integrate_forces(state):
 			jump_force = clamp(jump_force + jump_force_accel, 0, max_jump_force)
 			if jump_force == max_jump_force:
 				jump_force_decreasing = true
-			
 	else:
 		jump_force_decreasing = false
 		jump_force = clamp(jump_force - jump_force_decel, 0, max_jump_force)
 	
-	if Input.is_action_just_released("ui_up") and state.get_contact_count() > 0 and $ShellPolygons.get_child_count() < 1:
+	if Input.is_action_pressed("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
+		Engine.time_scale = .25
+	else:
+		Engine.time_scale = 1
+	
+	if Input.is_action_just_released("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
+		$CoyoteTimer.stop()
 		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
 		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, jump_force / max_jump_force * leg_max_y, .1, Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Legs/LegTween.start()
@@ -90,9 +106,6 @@ func _integrate_forces(state):
 	else:
 		$Wings/RightWing.rotation_degrees = wing_max_rotation
 		$Wings/LeftWing.rotation_degrees = -wing_max_rotation
-	
-	if Input.is_action_just_pressed("ui_select") and state.get_contact_count() > 0:
-		_break_shell(to_local(state.get_contact_collider_position(0)), 500)
 
 
 # trace outline of given texture and return array of points for polygon generation
