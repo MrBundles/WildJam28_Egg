@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 GlobalSignalManager="*res://Globals/GlobalSignalManager.gd"
 GlobalAudioManager="*res://Globals/GlobalAudioManager.tscn"
+GlobalSceneManager="*res://Globals/GlobalSceneManager.gd"
 
 [display]
 

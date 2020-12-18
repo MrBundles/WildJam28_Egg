@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Settings/VolumeSlider.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Fonts/eras-bold-itc/ERASBD.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="VolumeSlider" type="HBoxContainer"]
+margin_right = 807.0
+margin_bottom = 38.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+label_string = "Music Volume"
+
+[node name="Label" type="Label" parent="."]
+margin_right = 250.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 250, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "Music Volume"
+align = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 254.0
+margin_right = 693.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -60.0
+max_value = 0.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 697.0
+margin_right = 807.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 110, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Unmute"
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Nest/NestFront.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Nest/NestBack.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Nest/Nest.gd" type="Script" id=3]
+
+[node name="Nest" type="StaticBody2D"]
+position = Vector2( 12193.9, 1969.56 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NestBackSprite" type="Sprite" parent="."]
+position = Vector2( 0, -4 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="NestFrontSprite" type="Sprite" parent="."]
+position = Vector2( 0, 8 )
+z_index = 2
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 2.20508, 52.2417, -108.548, 49.0619, -178.469, 19.3961, -200.718, -2.32288, -198.068, -22.4526, -159.893, -37.2828, -126.52, -27.7477, -82.5518, 2.44702, -27.9893, 23.6362, 24.9834, 24.166, 86.9619, 6.68481, 136.228, -13.4449, 172.778, -37.8126, 203.997, -24.5715, 203.997, -2.85254, 170.624, 20.9854, 112.354, 49.5908 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, 64 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -150.887, -99.1639, -109.568, -125.121, -66.6602, -137.834, -18.4541, -142.072, 35.5781, -141.542, 99.1465, -131.478, 142.584, -113.996, 165.362, -102.342, 131.46, -61.0233, 69.4814, -42.4827, -10.5078, -40.8936, -94.7354, -47.78, -133.406, -68.9692 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
