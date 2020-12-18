@@ -11,30 +11,45 @@ export var torque_force_ungrounded = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
 export var damage_threshhold = 500
-
+export var leg_max_y : float = 65
+export var wing_max_rotation : float = 95
 export var leg_accel : float = 7.5
 export var max_jump_force : float = 2000
 export var jump_force_accel : float = 8
 export var jump_force_decel : float = 50
 export var path_projectile_spread : float = .5
 export(Curve) var path_projectile_curve
+export(Curve) var camera_zoom_curve
+export var camera_zoom_smoothing = .1
+
+export var world_speed : float = 1 setget _set_world_speed
 
 #variables
-var leg_max_y : float = 65
-var wing_max_rotation : float = 95
 var jump_force : float = 0
 var jump_force_decreasing : bool = false
 var previous_velocity : float = 0
 var current_collision_pos = Vector2.ZERO
 var path_projectile_spread_count : float = path_projectile_spread
+onready var camera_zoom_current = $Camera2D.zoom.x
+var camera_zoom_target = 0
 
 
 func _ready():	
 	rng.randomize()
 	
-	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 16)
+	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 12)
 	$ChickPolygon2D.polygon = $CollisionPolygon2D.polygon
 	generate_shell($CollisionPolygon2D.polygon)
+
+
+func _process(delta):
+	$Legs/LegSprite2.position.y = clamp($Legs/LegSprite.position.y - 52, 0, 1000)
+	
+	#camera_zoom_smoothing *= delta
+	var camera_zoom_current = $Camera2D.zoom.x
+	var camera_zoom_target = camera_zoom_curve.interpolate(previous_velocity / damage_threshhold)
+	var camera_zoom_smoothed = camera_zoom_current + clamp(camera_zoom_target - camera_zoom_current, -camera_zoom_smoothing, camera_zoom_smoothing)
+	$Camera2D.zoom = Vector2(camera_zoom_smoothed, camera_zoom_smoothed)
 
 
 func _physics_process(delta):
@@ -72,7 +87,7 @@ func _integrate_forces(state):
 			apply_torque_impulse(torque_force_grounded)
 		else:
 			apply_torque_impulse(torque_force_ungrounded)
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") and not $CoyoteTimer.is_stopped():
 		if jump_force_decreasing:
 			jump_force = clamp(jump_force - jump_force_accel, 0, max_jump_force)
 			if jump_force == 0:
@@ -88,15 +103,15 @@ func _integrate_forces(state):
 	if Input.is_action_pressed("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
 		Engine.time_scale = .25
 	else:
-		Engine.time_scale = 1
+		Engine.time_scale = world_speed
 	
 	if Input.is_action_just_released("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
 		$CoyoteTimer.stop()
 		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
-		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, jump_force / max_jump_force * leg_max_y, .1, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Legs/LegTween.interpolate_property($Legs/LegSprite, "position:y", $Legs/LegSprite.position.y, jump_force / max_jump_force * leg_max_y, .1, Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Legs/LegTween.start()
 		yield($Legs/LegTween, "tween_all_completed")
-		$Legs/LegTween.interpolate_property($Legs, "position:y", $Legs.position.y, 0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
+		$Legs/LegTween.interpolate_property($Legs/LegSprite, "position:y", $Legs/LegSprite.position.y, 0, .5, Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Legs/LegTween.start()
 	
 	if $ShellPolygons.get_child_count() < 1:
@@ -105,6 +120,11 @@ func _integrate_forces(state):
 	else:
 		$Wings/RightWing.rotation_degrees = 0
 		$Wings/LeftWing.rotation_degrees = 0
+
+
+func _set_world_speed(new_val):
+	world_speed = new_val
+	Engine.time_scale = world_speed
 
 
 # trace outline of given texture and return array of points for polygon generation

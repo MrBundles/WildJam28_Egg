@@ -1,9 +1,6 @@
 extends Sprite
 
 #variables
-var initial_impulse = Vector2.ZERO
-var init_flag = true #ensures pulse is applied only once
-var path_projectile_mult = 0
 var life_time = 1
 var max_alpha = .1
 

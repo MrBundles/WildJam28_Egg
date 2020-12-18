@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalSignalManager="*res://Globals/GlobalSignalManager.gd"
+GlobalAudioManager="*res://Globals/GlobalAudioManager.tscn"
 
 [display]
 
@@ -61,4 +62,5 @@ ui_down={
 
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"

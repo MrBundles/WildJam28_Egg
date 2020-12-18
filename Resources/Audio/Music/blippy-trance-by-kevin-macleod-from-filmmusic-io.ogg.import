@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/blippy-trance-by-kevin-macleod-from-filmmusic-io.ogg-b0436ad75c5911dc63ab53a54a610e9b.oggstr"
+
+[deps]
+
+source_file="res://Resources/Audio/Music/blippy-trance-by-kevin-macleod-from-filmmusic-io.ogg"
+dest_files=[ "res://.import/blippy-trance-by-kevin-macleod-from-filmmusic-io.ogg-b0436ad75c5911dc63ab53a54a610e9b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
