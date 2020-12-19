@@ -1,10 +1,7 @@
 extends Node2D
 
 
-func _ready():
-	if GlobalSceneManager.tutorial_completed:
-		$WrongWay.text = "Right Way"
-		$WrongWayHint.show()
-	else:
-		$WrongWay.text = "Wrong Way"
-		$WrongWayHint.hide()
+func _process(delta):
+	$WrongWay.visible = not GlobalSceneManager.tutorial_completed
+	$RightWay.visible = GlobalSceneManager.tutorial_completed
+	$WrongWayHint.visible = GlobalSceneManager.tutorial_completed

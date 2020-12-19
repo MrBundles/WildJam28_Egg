@@ -34,7 +34,11 @@ onready var camera_zoom_current = $Camera2D.zoom.x
 var camera_zoom_target = 0
 
 
-func _ready():	
+func _ready():
+	#connect signals
+	GlobalSignalManager.connect("spawn_player", self, "_on_spawn_player")
+	print("connecting signal")
+	
 	rng.randomize()
 	
 	$CollisionPolygon2D.polygon = find_sprite_outline(egg_texture, 12)
@@ -101,7 +105,7 @@ func _integrate_forces(state):
 		jump_force = clamp(jump_force - jump_force_decel, 0, max_jump_force)
 	
 	if Input.is_action_pressed("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
-		Engine.time_scale = .25
+		Engine.time_scale = 1 - GlobalSceneManager.jump_slo_mo
 	else:
 		Engine.time_scale = world_speed
 	
@@ -120,6 +124,10 @@ func _integrate_forces(state):
 	else:
 		$Wings/RightWing.rotation_degrees = 0
 		$Wings/LeftWing.rotation_degrees = 0
+
+
+func _on_spawn_player(spawn_pos):
+	global_position = spawn_pos
 
 
 func _set_world_speed(new_val):

@@ -1,15 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Entities/Environment/Ground.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Tilesets/WhiteTile.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 88 )
+resource_local_to_scene = true
+extents = Vector2( 32, 32 )
 
 [node name="Ground" type="StaticBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( 512, -88, 512, 88, -512, 88, -512, -88 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

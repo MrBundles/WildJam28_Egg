@@ -5,8 +5,6 @@ func _ready():
 	# connect signals
 	GlobalSignalManager.connect("bus_mute_changed", self, "_on_bus_mute_changed")
 	GlobalSignalManager.connect("bus_volume_changed", self, "_on_bus_volume_changed")
-	
-	$MusicASP.play()
 
 
 func _on_bus_mute_changed(bus_id):

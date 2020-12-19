@@ -8,22 +8,27 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Ground",
+"language": "GDScript",
+"path": "res://Entities/Environment/Ground.gd"
+} ]
 _global_script_class_icons={
-
+"Ground": ""
 }
 
 [application]
 
 config/name="Wild Jam 28 Egg"
-run/main_scene="res://Scenes/GameScenes/GameScene_01.tscn"
+run/main_scene="res://Scenes/GameScenes/GameScene_00.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalSignalManager="*res://Globals/GlobalSignalManager.gd"
 GlobalAudioManager="*res://Globals/GlobalAudioManager.tscn"
-GlobalSceneManager="*res://Globals/GlobalSceneManager.gd"
+GlobalSceneManager="*res://Globals/GlobalSceneManager.tscn"
 
 [display]
 
@@ -58,6 +63,11 @@ ui_down={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+settings={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
 

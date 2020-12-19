@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Resources/Fonts/eras-bold-itc/ERASBD.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Settings/VolumeSlider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Settings/SlowMotionSlider.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
 font_data = ExtResource( 1 )
 
 [node name="SettingsMenu" type="Control"]
@@ -54,7 +59,7 @@ align = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 120.0
 margin_right = 721.0
-margin_bottom = 200.0
+margin_bottom = 242.0
 
 [node name="MusicVolumeSlider" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_right = 721.0
@@ -66,3 +71,34 @@ margin_right = 721.0
 margin_bottom = 80.0
 label_string = "Effects Volume"
 bus_id = 2
+
+[node name="SlowMotionSlider" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 721.0
+margin_bottom = 122.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/SlowMotionSlider"]
+margin_right = 250.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 250, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "Jump Slo-Mo"
+align = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/VBoxContainer/SlowMotionSlider"]
+margin_left = 254.0
+margin_right = 721.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = 0.2
+max_value = 0.9
+step = 0.1
+value = 0.9
+tick_count = 8
+ticks_on_borders = true
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/SlowMotionSlider/HSlider" to="VBoxContainer/VBoxContainer/SlowMotionSlider" method="_on_HSlider_value_changed"]

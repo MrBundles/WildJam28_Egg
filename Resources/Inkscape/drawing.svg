@@ -728,7 +728,7 @@
      inkscape:window-x="2391"
      inkscape:window-height="1001"
      inkscape:window-width="1920"
-     inkscape:snap-global="false"
+     inkscape:snap-global="true"
      inkscape:bbox-nodes="true"
      inkscape:snap-bbox="true"
      inkscape:snap-grids="true"
@@ -736,9 +736,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="664.60135"
-     inkscape:cx="1630.9597"
-     inkscape:zoom="1"
+     inkscape:cy="437.53551"
+     inkscape:cx="1273.4783"
+     inkscape:zoom="0.25"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -2238,5 +2238,23 @@
          sodipodi:nodetypes="ccccccccccccccccccccccccc"
          inkscape:transform-center-x="-1.3732105e-06" />
     </g>
+    <rect
+       ry="3.126996e-07"
+       y="220.13333"
+       x="279.39999"
+       height="1.3572967"
+       width="31.856365"
+       id="rect1958"
+       style="fill:#caa640;fill-opacity:1;stroke-width:0.918971;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0.918971, 3.67587" />
+    <path
+       inkscape:export-ydpi="48"
+       inkscape:export-xdpi="48"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\Wild Jams\WildJam28_Egg\UI\Arrow.png"
+       transform="scale(0.26458333)"
+       d="M -626.81836,512 V 682.04102 L -704,682.61328 -609.91992,790.01758 -512,896 -414.08008,790.01758 -320,682.61328 -397.18164,682.04102 V 512 Z"
+       inkscape:transform-center-y="-2.3333333e-06"
+       inkscape:transform-center-x="-2.409487"
+       style="fill:#37718e;fill-opacity:1;stroke:none;stroke-width:23.889;stroke-miterlimit:5;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="path1960" />
   </g>
 </svg>

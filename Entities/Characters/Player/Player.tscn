@@ -29,6 +29,7 @@ size = Vector2( 64, 96 )
 [node name="Player" type="RigidBody2D" groups=[
 "Player",
 ]]
+position = Vector2( 5, 0 )
 collision_layer = 2
 gravity_scale = 6.0
 continuous_cd = 2

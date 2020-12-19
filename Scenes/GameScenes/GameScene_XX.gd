@@ -1,8 +1,16 @@
 extends Node2D
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_select"):
-		var transA = Transform2D(0.0, $APolygon2D.global_position)
-		var transB = Transform2D(0.0, $BPolygon2D.global_position)
-		$APolygon2D.polygon = transA.xform_inv(Geometry.clip_polygons_2d(transA.xform($APolygon2D.polygon), transB.xform($BPolygon2D.polygon))[0])
-		$BPolygon2D.queue_free()
+#exports
+export var player_scene_path = ""
+
+
+func _ready():
+	GlobalSignalManager.connect("spawn_player", self, "_on_spawn_player")
+	print("signal connected")
+
+
+func _on_spawn_player(spawn_pos):
+	print("spawning player")
+	var player_instance = load(player_scene_path).instance()
+	player_instance.global_position = spawn_pos
+	add_child(player_instance)
