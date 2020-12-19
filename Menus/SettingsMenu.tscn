@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Fonts/eras-bold-itc/ERASBD.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Settings/VolumeSlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/Settings/SlowMotionSlider.gd" type="Script" id=3]
+[ext_resource path="res://UI/Settings/SettingsButton.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -41,9 +42,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -360.5
-margin_top = -100.0
+margin_top = -166.0
 margin_right = 360.5
-margin_bottom = 100.0
+margin_bottom = 166.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,23 +60,24 @@ align = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 120.0
 margin_right = 721.0
-margin_bottom = 242.0
+margin_bottom = 332.0
+custom_constants/separation = 18
 
 [node name="MusicVolumeSlider" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_right = 721.0
 bus_id = 1
 
 [node name="EffectsVolumeSlider" parent="VBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 42.0
+margin_top = 56.0
 margin_right = 721.0
-margin_bottom = 80.0
+margin_bottom = 94.0
 label_string = "Effects Volume"
 bus_id = 2
 
 [node name="SlowMotionSlider" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_top = 84.0
+margin_top = 112.0
 margin_right = 721.0
-margin_bottom = 122.0
+margin_bottom = 150.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -101,4 +103,31 @@ step = 0.1
 value = 0.9
 tick_count = 8
 ticks_on_borders = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 721.0
+margin_bottom = 212.0
+custom_constants/separation = 32
+
+[node name="TutorialButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_right = 219.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+spawn_point = 1
+
+[node name="CreditsButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 251.0
+margin_right = 470.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+text = "Credits"
+
+[node name="LevelSelectButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 502.0
+margin_right = 721.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+text = "Level Select"
+spawn_point = 2
 [connection signal="value_changed" from="VBoxContainer/VBoxContainer/SlowMotionSlider/HSlider" to="VBoxContainer/VBoxContainer/SlowMotionSlider" method="_on_HSlider_value_changed"]

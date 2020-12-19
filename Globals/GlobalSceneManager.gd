@@ -39,6 +39,7 @@ func _on_start_level(level_id, spawn_point):
 		current_spawn_point = spawn_point
 		get_tree().change_scene(scene_path_array[level_id])
 		current_level_id = level_id
+		get_tree().paused = false
 
 
 func _on_slo_mo_changed(new_val):

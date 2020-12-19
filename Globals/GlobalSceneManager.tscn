@@ -3,6 +3,6 @@
 [ext_resource path="res://Globals/GlobalSceneManager.gd" type="Script" id=1]
 
 [node name="GlobalSceneManager" type="Node"]
+pause_mode = 2
 script = ExtResource( 1 )
-scene_path_array = [ "res://Scenes/GameScenes/GameScene_01.tscn", "res://Scenes/GameScenes/GameScene_01.tscn" ]
-current_spawn_point = 2
+scene_path_array = [ "res://Scenes/GameScenes/GameScene_00.tscn", "res://Scenes/GameScenes/GameScene_01.tscn" ]
