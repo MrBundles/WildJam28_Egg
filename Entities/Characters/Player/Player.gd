@@ -4,6 +4,12 @@ extends RigidBody2D
 var rng = RandomNumberGenerator.new()
 
 #exports
+export(Array, AudioStream) var chick_land_asp_array
+export(Array, AudioStream) var egg_crack_asp_array
+export(Array, AudioStream) var egg_tap_asp_array
+export(Array, AudioStream) var jump_whoosh_asp_array
+export(Array, AudioStream) var bird_tweet_asp_array
+
 export var egg_texture : Texture = Texture.new()
 export var chick_texture : Texture = Texture.new()
 export var torque_force_grounded = 50
@@ -11,6 +17,7 @@ export var torque_force_ungrounded = 50
 export var shard_randomize_factor = .1 #should be between 0 and .33
 export var shard_length = 16
 export var damage_threshhold = 500
+export var tap_threshhold = 250
 export var leg_max_y : float = 65
 export var wing_max_rotation : float = 95
 export var leg_accel : float = 7.5
@@ -21,7 +28,6 @@ export var path_projectile_spread : float = .5
 export(Curve) var path_projectile_curve
 export(Curve) var camera_zoom_curve
 export var camera_zoom_smoothing = .1
-
 export var world_speed : float = 1 setget _set_world_speed
 
 #variables
@@ -75,9 +81,17 @@ func _integrate_forces(state):
 	if state.get_contact_count() > 0:
 		$CoyoteTimer.start()
 	
+	if state.get_contact_count() > 0 and $TapTimer.is_stopped() and previous_velocity > tap_threshhold:
+		$TapTimer.start()
+		if $ShellPolygons.get_child_count() > 0:
+			_on_egg_tap()
+		else:
+			_on_chick_land()
+	
 	if state.get_contact_count() > 0 and previous_velocity > damage_threshhold:
 		while $ShellPolygons.get_child_count() > 0:
 			_break_shell(state.get_contact_collider_position(0), 750)
+			_on_egg_crack()
 			yield(get_tree(),"physics_frame")
 	previous_velocity = linear_velocity.length()
 	
@@ -110,6 +124,7 @@ func _integrate_forces(state):
 		Engine.time_scale = world_speed
 	
 	if Input.is_action_just_released("ui_up") and not $CoyoteTimer.is_stopped() and $ShellPolygons.get_child_count() < 1:
+		_on_jump_whoosh()
 		$CoyoteTimer.stop()
 		apply_central_impulse(Vector2(0,-jump_force).rotated(rotation))
 		$Legs/LegTween.interpolate_property($Legs/LegSprite, "position:y", $Legs/LegSprite.position.y, jump_force / max_jump_force * leg_max_y, .1, Tween.TRANS_QUAD, Tween.EASE_OUT)
@@ -282,3 +297,53 @@ func _get_polygon_area(polygon : Polygon2D) -> float:
 	var point_C = polygon.polygon[2]
 	var area = abs((point_A.x * (point_B.y - point_C.y) + point_B.x * (point_C.y - point_A.y) + point_C.x * (point_A.y - point_B.y)) / 2)
 	return area
+
+
+func _on_chick_land():
+	$ASPs/ChickLandASP.stream = chick_land_asp_array[rng.randi_range(0,chick_land_asp_array.size()-1)]
+	$ASPs/ChickLandASP.pitch_scale = 1 + rng.randf_range(-.5,.5)
+	var min_land_vol = -20
+	$ASPs/ChickLandASP.volume_db = clamp(min_land_vol + (previous_velocity / damage_threshhold) * -min_land_vol, min_land_vol, 0)
+	if not $ASPs/ChickLandASP.playing:
+		$ASPs/ChickLandASP.play()
+		if previous_velocity > damage_threshhold or rng.randi_range(0,5) == 1:
+			_on_tweet($ASPs/ChickLandASP.volume_db)
+
+
+func _on_egg_crack():
+	$ASPs/EggCrack1ASP.stream = egg_crack_asp_array[rng.randi_range(0,egg_crack_asp_array.size()-1)]
+	$ASPs/EggCrack2ASP.stream = egg_crack_asp_array[rng.randi_range(0,egg_crack_asp_array.size()-1)]
+	$ASPs/EggCrack3ASP.stream = egg_crack_asp_array[rng.randi_range(0,egg_crack_asp_array.size()-1)]
+	$ASPs/EggCrack4ASP.stream = egg_crack_asp_array[rng.randi_range(0,egg_crack_asp_array.size()-1)]
+	$ASPs/EggCrack1ASP.play()
+	$ASPs/EggCrack2ASP.play()
+	$ASPs/EggCrack3ASP.play()
+	$ASPs/EggCrack4ASP.play()
+
+
+func _on_egg_tap():
+	$ASPs/EggTapASP.stream = egg_tap_asp_array[rng.randi_range(0,egg_tap_asp_array.size()-1)]
+	$ASPs/EggTapASP.pitch_scale = 1 + rng.randf_range(-.5,.5)
+	var min_tap_vol = -20
+	$ASPs/EggTapASP.volume_db = clamp(min_tap_vol + (previous_velocity / damage_threshhold) * -min_tap_vol, min_tap_vol, 0)
+	if not $ASPs/EggTapASP.playing:
+		$ASPs/EggTapASP.play()
+
+
+func _on_jump_whoosh():
+	$ASPs/JumpWhooshASP.stream = jump_whoosh_asp_array[rng.randi_range(0,jump_whoosh_asp_array.size()-1)]
+	$ASPs/JumpWhooshASP.pitch_scale = 1 + rng.randf_range(-.5,.5)
+	var min_whoosh_vol = -30
+	$ASPs/JumpWhooshASP.volume_db = min_whoosh_vol + (jump_force / max_jump_force) * -min_whoosh_vol
+	$ASPs/JumpWhooshASP.play()
+
+
+func _on_tweet(tweet_vol):
+	if not $ASPs/TweetASP.playing:
+		$ASPs/TweetASP.stream = bird_tweet_asp_array[rng.randi_range(0,bird_tweet_asp_array.size()-1)]
+		$ASPs/TweetASP.volume_db = tweet_vol
+		$ASPs/TweetASP.play()
+
+
+func _on_TapTimer_timeout():
+	$TapTimer.stop()

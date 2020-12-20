@@ -1,10 +1,33 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Entities/Characters/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Characters/Player/Egg.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Chick_Land/zapsplat_food_apple_set_down_on_table_003_27227.wav" type="AudioStream" id=3]
 [ext_resource path="res://Entities/Characters/Player/Chick.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Chick_Land/zapsplat_food_apple_set_down_on_table_001_27225.wav" type="AudioStream" id=5]
 [ext_resource path="res://Entities/Characters/Player/Wings/Wing.png" type="Texture" id=6]
 [ext_resource path="res://Entities/Characters/Player/Legs/Legs.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Chick_Land/zapsplat_food_apple_set_down_on_table_002_27226.wav" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/food_egg_crack_2 - Region #2_3.wav" type="AudioStream" id=9]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_squeeze_crack_hand_003_34828 - Region #2_3.wav" type="AudioStream" id=10]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_squeeze_crack_hand_003_34828 - Region #3_3.wav" type="AudioStream" id=11]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_squeeze_crack_hand_003_34828 - Region #1_3.wav" type="AudioStream" id=12]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/food_egg_crack_2 - Region #3_3.wav" type="AudioStream" id=13]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_intact_hollow_drop_hard_surface_light_crack_001_29238.wav" type="AudioStream" id=14]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/food_egg_crack_2 - Region #1_3.wav" type="AudioStream" id=15]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_intact_hollow_drop_hard_surface_light_crack_002_29239.wav" type="AudioStream" id=16]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #4_3.wav" type="AudioStream" id=17]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_single_tap_on_hard_surface_4.wav" type="AudioStream" id=18]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #2_4.wav" type="AudioStream" id=19]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface_3.wav" type="AudioStream" id=20]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #1_4.wav" type="AudioStream" id=21]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #5_3.wav" type="AudioStream" id=22]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #3_3.wav" type="AudioStream" id=23]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Jump_Whoosh/multimedia_max_min_interface_sound_whoosh_max.wav" type="AudioStream" id=24]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Jump_Whoosh/multimedia_max_min_interface_sound_whoosh_max_2_Reversed.wav" type="AudioStream" id=25]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Tweets/animals_bird_nestling_or_chick_tweet_002 (1).wav" type="AudioStream" id=27]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Tweets/animals_bird_nestling_or_chick_tweet_001.wav" type="AudioStream" id=28]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Tweets/animals_bird_nestling_or_chick_tweet_002.wav" type="AudioStream" id=29]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0.00277008, 0 ), 0.0, 0.0763213, 0, 0, Vector2( 0.756233, 0 ), 0.0800443, 0.0800443, 0, 0, Vector2( 0.919668, 0.481818 ), 5.42213, 5.42213, 0, 0, Vector2( 1, 0.990909 ), 9.08811, 0.0, 0, 0 ]
@@ -37,11 +60,17 @@ contacts_reported = 5
 contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
+chick_land_asp_array = [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 3 ) ]
+egg_crack_asp_array = [ ExtResource( 15 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
+egg_tap_asp_array = [ ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 20 ) ]
+jump_whoosh_asp_array = [ ExtResource( 24 ), ExtResource( 25 ) ]
+bird_tweet_asp_array = [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ) ]
 egg_texture = ExtResource( 2 )
 chick_texture = ExtResource( 4 )
 torque_force_grounded = 500
 torque_force_ungrounded = 150
 damage_threshhold = 375
+tap_threshhold = 150
 leg_max_y = 120.0
 max_jump_force = 1500.0
 jump_force_accel = 25.0
@@ -112,3 +141,36 @@ __meta__ = {
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.005
+
+[node name="TapTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ASPs" type="Node2D" parent="."]
+
+[node name="ChickLandASP" type="AudioStreamPlayer" parent="ASPs"]
+bus = "Effects"
+
+[node name="EggCrack1ASP" type="AudioStreamPlayer" parent="ASPs"]
+bus = "Effects"
+
+[node name="EggCrack2ASP" type="AudioStreamPlayer" parent="ASPs"]
+volume_db = -15.0
+bus = "Effects"
+
+[node name="EggCrack3ASP" type="AudioStreamPlayer" parent="ASPs"]
+volume_db = -30.0
+bus = "Effects"
+
+[node name="EggCrack4ASP" type="AudioStreamPlayer" parent="ASPs"]
+volume_db = -45.0
+bus = "Effects"
+
+[node name="EggTapASP" type="AudioStreamPlayer" parent="ASPs"]
+bus = "Effects"
+
+[node name="JumpWhooshASP" type="AudioStreamPlayer" parent="ASPs"]
+bus = "Effects"
+
+[node name="TweetASP" type="AudioStreamPlayer" parent="ASPs"]
+bus = "Effects"
+[connection signal="timeout" from="TapTimer" to="." method="_on_TapTimer_timeout"]

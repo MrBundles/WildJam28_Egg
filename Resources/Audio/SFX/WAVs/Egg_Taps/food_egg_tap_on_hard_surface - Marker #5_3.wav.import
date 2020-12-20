@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/food_egg_tap_on_hard_surface - Marker #5_3.wav-8865cf914e935b01ea0143374e75abcf.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Egg_Taps/food_egg_tap_on_hard_surface - Marker #5_3.wav"
+dest_files=[ "res://.import/food_egg_tap_on_hard_surface - Marker #5_3.wav-8865cf914e935b01ea0143374e75abcf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

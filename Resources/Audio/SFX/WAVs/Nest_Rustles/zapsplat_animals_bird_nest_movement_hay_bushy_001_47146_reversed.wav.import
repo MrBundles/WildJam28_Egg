@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zapsplat_animals_bird_nest_movement_hay_bushy_001_47146_reversed.wav-1e418f0c7d3969ef6246c8b86486997e.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Nest_Rustles/zapsplat_animals_bird_nest_movement_hay_bushy_001_47146_reversed.wav"
+dest_files=[ "res://.import/zapsplat_animals_bird_nest_movement_hay_bushy_001_47146_reversed.wav-1e418f0c7d3969ef6246c8b86486997e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

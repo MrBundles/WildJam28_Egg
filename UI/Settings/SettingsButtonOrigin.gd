@@ -11,7 +11,7 @@ var mouse_present = false
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("settings"):
+	if Input.is_action_just_released("settings"):
 		GlobalSignalManager.emit_signal("toggle_settings")
 	
 	if mouse_present:

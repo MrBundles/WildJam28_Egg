@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zapsplat_food_apple_set_down_on_table_003_27227.wav-415779d3b4c89a7fb3351ce02553e282.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Chick_Land/zapsplat_food_apple_set_down_on_table_003_27227.wav"
+dest_files=[ "res://.import/zapsplat_food_apple_set_down_on_table_003_27227.wav-415779d3b4c89a7fb3351ce02553e282.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

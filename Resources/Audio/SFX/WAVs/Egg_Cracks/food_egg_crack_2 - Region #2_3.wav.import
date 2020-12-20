@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/food_egg_crack_2 - Region #2_3.wav-2f2792a72f469b2a8b003ccb73de3c32.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Egg_Cracks/food_egg_crack_2 - Region #2_3.wav"
+dest_files=[ "res://.import/food_egg_crack_2 - Region #2_3.wav-2f2792a72f469b2a8b003ccb73de3c32.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

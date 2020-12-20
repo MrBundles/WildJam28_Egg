@@ -1,4 +1,3 @@
-tool
 extends Button
 
 #exports

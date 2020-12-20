@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zapsplat_food_egg_shell_intact_hollow_drop_hard_surface_light_crack_001_29238.wav-549f1a79a04f8ffc08403d54cc1549db.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Egg_Cracks/zapsplat_food_egg_shell_intact_hollow_drop_hard_surface_light_crack_001_29238.wav"
+dest_files=[ "res://.import/zapsplat_food_egg_shell_intact_hollow_drop_hard_surface_light_crack_001_29238.wav-549f1a79a04f8ffc08403d54cc1549db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

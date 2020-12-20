@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/multimedia_max_min_interface_sound_whoosh_max_2_Reversed.wav-cfd74fa29a07112eb3d4d8c2c8e3ceea.sample"
+
+[deps]
+
+source_file="res://Resources/Audio/SFX/WAVs/Jump_Whoosh/multimedia_max_min_interface_sound_whoosh_max_2_Reversed.wav"
+dest_files=[ "res://.import/multimedia_max_min_interface_sound_whoosh_max_2_Reversed.wav-cfd74fa29a07112eb3d4d8c2c8e3ceea.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
