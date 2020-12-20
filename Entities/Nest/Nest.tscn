@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Entities/Nest/NestFront.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Nest/NestBack.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Nest/Nest.gd" type="Script" id=3]
 [ext_resource path="res://Entities/Nest/StrawParticle.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Nest_Rustles/zapsplat_animals_bird_nest_movement_hay_bushy_001_47145.wav" type="AudioStream" id=5]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Nest_Rustles/zapsplat_animals_bird_nest_movement_hay_bushy_001_47146_reversed.wav" type="AudioStream" id=6]
 
 [sub_resource type="ParticlesMaterial" id=1]
 flag_disable_z = true
@@ -25,6 +27,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
+nest_rustle_asp_array = [ ExtResource( 5 ), ExtResource( 6 ) ]
 
 [node name="NestBackSprite" type="Sprite" parent="."]
 position = Vector2( 0, -4 )
@@ -50,10 +53,14 @@ wait_time = 3.0
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 0, -16 )
+z_index = 1
 emitting = false
 amount = 100
 process_material = SubResource( 1 )
 texture = ExtResource( 4 )
+
+[node name="NestRustleASP" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

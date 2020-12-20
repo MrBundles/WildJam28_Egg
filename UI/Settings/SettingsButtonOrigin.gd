@@ -11,7 +11,7 @@ var mouse_present = false
 
 
 func _process(delta):
-	if Input.is_action_just_released("settings"):
+	if Input.is_action_just_released("ui_down"):
 		GlobalSignalManager.emit_signal("toggle_settings")
 	
 	if mouse_present:
@@ -25,6 +25,7 @@ func _process(delta):
 func _on_SettingsButton_mouse_entered():
 	mouse_present = true
 	GlobalSignalManager.emit_signal("show_hint", -1)
+	$SettingsButtonHoverASP.play()
 
 
 func _on_SettingsButton_mouse_exited():
@@ -34,3 +35,4 @@ func _on_SettingsButton_mouse_exited():
 
 func _on_SettingsButton_pressed():
 	GlobalSignalManager.emit_signal("toggle_settings")
+	$SettingsButtonClickASP.play()

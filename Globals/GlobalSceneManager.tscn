@@ -5,4 +5,4 @@
 [node name="GlobalSceneManager" type="Node"]
 pause_mode = 2
 script = ExtResource( 1 )
-scene_path_array = [ "res://Scenes/GameScenes/GameScene_00.tscn", "res://Scenes/GameScenes/GameScene_01.tscn" ]
+scene_path_array = [ "res://Scenes/GameScenes/GameScene_00.tscn", "res://Scenes/GameScenes/GameScene_01.tscn", "res://Scenes/GameScenes/GameScene_02.tscn" ]

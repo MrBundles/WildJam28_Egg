@@ -7,9 +7,30 @@ enum TRIGGER_TYPES {tutorial_complete, level_complete, start_level}
 export(TRIGGER_TYPES) var trigger_type = TRIGGER_TYPES.tutorial_complete
 export var level_id = 0    #only used for starting a level
 export(GlobalSceneManager.SPAWN_POINTS) var spawn_point = GlobalSceneManager.SPAWN_POINTS.init
+export(Array, AudioStream) var nest_rustle_asp_array
 
 #variables
 var player_present = false
+
+#rng
+var rng = RandomNumberGenerator.new()
+
+
+func _ready():
+	rng.randomize()
+
+
+func _process(delta):
+	if player_present and not $NestRustleASP.playing:
+		_on_nest_rustle()
+	if $NestRustleASP.playing and not player_present:
+		$NestRustleASP.playing = false
+
+
+func _on_nest_rustle():
+	$NestRustleASP.stream = nest_rustle_asp_array[rng.randi_range(0,nest_rustle_asp_array.size()-1)]
+	$NestRustleASP.pitch_scale = 1 + rng.randf_range(-.1,.1)
+	$NestRustleASP.play()
 
 
 func _on_Area2D_body_entered(body):

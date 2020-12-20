@@ -846,7 +846,7 @@ damage_threshhold = 750
 
 [node name="Nest1" parent="LevelSelectNests" instance=ExtResource( 18 )]
 position = Vector2( -2724.45, 1099.78 )
-trigger_type = 1
+trigger_type = 2
 level_id = 1
 
 [node name="Nest2" parent="LevelSelectNests" instance=ExtResource( 18 )]

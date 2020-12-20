@@ -73,6 +73,7 @@ margin_right = 721.0
 margin_bottom = 94.0
 label_string = "Effects Volume"
 bus_id = 2
+play_volume_sample_on_change = true
 
 [node name="SlowMotionSlider" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 margin_top = 112.0
@@ -110,21 +111,29 @@ margin_right = 721.0
 margin_bottom = 212.0
 custom_constants/separation = 32
 
+[node name="RestartButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
+margin_right = 141.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+text = "Retry"
+restart_button = true
+
 [node name="TutorialButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_right = 219.0
+margin_left = 173.0
+margin_right = 314.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 spawn_point = 1
 
 [node name="CreditsButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_left = 251.0
-margin_right = 470.0
+margin_left = 346.0
+margin_right = 487.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 text = "Credits"
 
 [node name="LevelSelectButton" parent="VBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 4 )]
-margin_left = 502.0
+margin_left = 519.0
 margin_right = 721.0
 margin_bottom = 44.0
 size_flags_horizontal = 3

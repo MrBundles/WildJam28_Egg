@@ -24,6 +24,10 @@ config/name="Wild Jam 28 Egg"
 run/main_scene="res://Scenes/GameScenes/GameScene_00.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=15
+
 [autoload]
 
 GlobalSignalManager="*res://Globals/GlobalSignalManager.gd"

@@ -341,7 +341,7 @@ func _on_jump_whoosh():
 func _on_tweet(tweet_vol):
 	if not $ASPs/TweetASP.playing:
 		$ASPs/TweetASP.stream = bird_tweet_asp_array[rng.randi_range(0,bird_tweet_asp_array.size()-1)]
-		$ASPs/TweetASP.volume_db = tweet_vol
+		$ASPs/TweetASP.volume_db = clamp(tweet_vol, -80, 0)
 		$ASPs/TweetASP.play()
 
 

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/Settings/VolumeSlider.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/eras-bold-itc/ERASBD.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/UI/multimedia_rollover_041.wav" type="AudioStream" id=3]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/UI/multimedia_rollover_042.wav" type="AudioStream" id=4]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/Tweets/animals_bird_nestling_or_chick_tweet_001.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -36,6 +39,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = -60.0
 max_value = 0.0
+step = 10.0
+tick_count = 7
+ticks_on_borders = true
 
 [node name="Button" type="Button" parent="."]
 margin_left = 697.0
@@ -43,6 +49,21 @@ margin_right = 807.0
 margin_bottom = 38.0
 rect_min_size = Vector2( 110, 0 )
 custom_fonts/font = SubResource( 2 )
-text = "Unmute"
+text = "Mute"
+
+[node name="MuteButtonHoverASP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "Effects"
+
+[node name="MuteButtonClickASP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "Effects"
+
+[node name="VolumeSampleASP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Effects"
 [connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

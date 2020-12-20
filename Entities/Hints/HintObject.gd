@@ -19,6 +19,8 @@ func _ready():
 
 
 func _on_show_hint(show_hint_id):
+	if $Tween.is_active():
+		yield($Tween, "tween_all_completed")
 	get_parent().show()
 	if show_hint_id == hint_id:
 		$Tween.interpolate_property(get_parent(), "modulate", get_parent().modulate, Color(1,1,1,1),
@@ -27,6 +29,8 @@ func _on_show_hint(show_hint_id):
 
 
 func _on_hide_hint(hide_hint_id):
+	if $Tween.is_active():
+		yield($Tween, "tween_all_completed")
 	if hide_hint_id == hint_id:
 		$Tween.interpolate_property(get_parent(), "modulate", get_parent().modulate, Color(1,1,1,0),
 		off_transition_duration,Tween.TRANS_QUAD, Tween.EASE_IN_OUT)

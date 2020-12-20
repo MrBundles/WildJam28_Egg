@@ -7,6 +7,7 @@ resource_local_to_scene = true
 extents = Vector2( 100, 100 )
 
 [node name="HintArea" type="Area2D"]
+z_index = 1
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

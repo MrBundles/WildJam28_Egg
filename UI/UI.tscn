@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/SettingsIcon.png" type="Texture" id=1]
 [ext_resource path="res://UI/SettingsIconPaused.png" type="Texture" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://Entities/Hints/HintObject.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Menus/SettingsMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/UI.gd" type="Script" id=6]
-[ext_resource path="res://Entities/Hints/HintObject.gd" type="Script" id=7]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/UI/multimedia_rollover_041.wav" type="AudioStream" id=7]
 [ext_resource path="res://UI/Settings/SettingsButtonOrigin.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Audio/SFX/WAVs/UI/multimedia_rollover_042.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -21,19 +22,8 @@ font_data = ExtResource( 3 )
 pause_mode = 2
 script = ExtResource( 6 )
 
-[node name="SettingsMenu" type="Control" parent="." instance=ExtResource( 5 )]
+[node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -300.0
-margin_right = 512.0
-margin_bottom = 300.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SettingsButtonOrigin" type="Node2D" parent="."]
 pause_mode = 2
@@ -60,6 +50,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SettingsButtonHoverASP" type="AudioStreamPlayer" parent="SettingsButtonOrigin"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+bus = "Effects"
+
+[node name="SettingsButtonClickASP" type="AudioStreamPlayer" parent="SettingsButtonOrigin"]
+stream = ExtResource( 9 )
+volume_db = -10.0
+bus = "Effects"
+
 [node name="Back" type="Label" parent="."]
 margin_left = 46.7392
 margin_top = 4.386
@@ -73,8 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HintObject" type="Node2D" parent="Back" instance=ExtResource( 4 )]
-script = ExtResource( 7 )
+[node name="HintObject" parent="Back" instance=ExtResource( 4 )]
 hint_id = -1
 on_transition_duration = 0.2
 off_transition_duration = 0.2
@@ -92,8 +91,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HintObject" type="Node2D" parent="Settings" instance=ExtResource( 4 )]
-script = ExtResource( 7 )
+[node name="HintObject" parent="Settings" instance=ExtResource( 4 )]
 hint_id = -1
 on_transition_duration = 0.2
 off_transition_duration = 0.2

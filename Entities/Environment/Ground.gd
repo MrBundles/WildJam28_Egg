@@ -18,7 +18,8 @@ func _ready():
 
 func _set_size(new_val):
 	size = new_val
-	$CollisionShape2D.shape.extents = size / Vector2(2,2)
+	if has_node("CollisionShape2D"):
+		$CollisionShape2D.shape.extents = size / Vector2(2,2)
 	$Sprite.scale = size / init_size
 
 
