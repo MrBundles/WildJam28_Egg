@@ -15,7 +15,5 @@ bus = "Music"
 
 [node name="WinMusicASP" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -10.0
 bus = "Music"
-
-[node name="EffectsSampleASP" type="AudioStreamPlayer" parent="."]
-bus = "Effects"

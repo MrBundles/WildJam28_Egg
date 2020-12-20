@@ -74,6 +74,7 @@ tap_threshhold = 150
 leg_max_y = 120.0
 max_jump_force = 1500.0
 jump_force_accel = 25.0
+path_projectile_spread = 0.05
 path_projectile_curve = SubResource( 1 )
 camera_zoom_curve = SubResource( 2 )
 camera_zoom_smoothing = 0.007

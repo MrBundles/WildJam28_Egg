@@ -7,11 +7,11 @@ enum SPAWN_POINTS {init, tutorial, level_select}
 var tutorial_completed = false
 var jump_slo_mo = .7
 var current_level_id = 0
+var highest_completed_level_id = 0
 var spawn_pos_array = [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO]
 
 #exports
 export(Array, String) var scene_path_array = []
-export var win_scene_path = ""
 export(SPAWN_POINTS) var current_spawn_point = SPAWN_POINTS.init
 
 
@@ -30,8 +30,10 @@ func _on_tutorial_completed(spawn_point):
 	get_tree().reload_current_scene()
 
 
-func _on_level_completed(spawn_point):
-	current_spawn_point = spawn_point
+func _on_level_completed(level_id):
+	if level_id >  highest_completed_level_id:
+		highest_completed_level_id = level_id
+	
 
 
 func _on_start_level(level_id, spawn_point):

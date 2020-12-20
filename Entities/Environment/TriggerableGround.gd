@@ -45,7 +45,8 @@ func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player"):
 		player_present = true
 		GlobalSignalManager.emit_signal("hide_hint", hint_id)
-		$Timer.start()
+		if GlobalSceneManager.highest_completed_level_id >= level_id - 1:
+			$Timer.start()
 
 
 func _on_Area2D_body_exited(body):

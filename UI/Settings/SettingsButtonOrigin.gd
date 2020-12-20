@@ -10,10 +10,7 @@ export(Texture) var unpause_texture = Texture.new()
 var mouse_present = false
 
 
-func _process(delta):
-	if Input.is_action_just_released("ui_down"):
-		GlobalSignalManager.emit_signal("toggle_settings")
-	
+func _process(delta):	
 	if mouse_present:
 		rotation_degrees += rotation_speed * delta * rotation_dir
 	if get_tree().paused:

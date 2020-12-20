@@ -1,9 +1,16 @@
 extends CanvasLayer
 
+#exports
+export var is_final_scene = false
+
 
 func _ready():
 	# connect signals
 	GlobalSignalManager.connect("toggle_settings", self, "_on_toggle_settings")
+	
+	if is_final_scene:
+		$Particles2D.emitting = true
+		$Particles2D2.emitting = true
 
 
 func _process(delta):

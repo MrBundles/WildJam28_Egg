@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 #enums
-enum TRIGGER_TYPES {tutorial_complete, level_complete, start_level}
+enum TRIGGER_TYPES {tutorial_complete, start_level, null_trigger}
 
 #exports
 export(TRIGGER_TYPES) var trigger_type = TRIGGER_TYPES.tutorial_complete
@@ -47,9 +47,9 @@ func _on_Area2D_body_exited(body):
 
 
 func _on_Timer_timeout():
+	GlobalSignalManager.emit_signal("level_completed", GlobalSceneManager.current_level_id)
+	
 	if trigger_type == TRIGGER_TYPES.tutorial_complete:
 		GlobalSignalManager.emit_signal("tutorial_completed", spawn_point)
-	elif trigger_type == TRIGGER_TYPES.level_complete:
-		GlobalSignalManager.emit_signal("level_completed", spawn_point)
 	elif trigger_type == TRIGGER_TYPES.start_level:
 		GlobalSignalManager.emit_signal("start_level", level_id, spawn_point)

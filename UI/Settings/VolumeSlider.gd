@@ -9,6 +9,7 @@ export var play_volume_sample_on_change = false
 
 func _ready():
 	_set_label_string(label_string)
+	$HSlider.value = AudioServer.get_bus_volume_db(bus_id)
 
 
 func _set_label_string(new_val):
